@@ -70,7 +70,7 @@
               <slot name="action11">
                 <!--Default content for action11-->
                 <div class="navbar8-fragment25">
-                  <span class="navbar8-text27">注册</span>
+                  <span class="navbar8-text27">登录</span>
                 </div>
               </slot>
             </router-link>
