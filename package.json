@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@lottiefiles/vue-lottie-player": "1.0.4",
+    "axios": "^1.8.4",
     "dangerous-html": "0.1.13",
     "next": "^12.1.10",
     "react": "^17.0.2",
