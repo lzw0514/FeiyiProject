@@ -7,6 +7,7 @@ import Page1 from './views/denglu'
 import Home from './views/home'
 import NotFound from './views/not-found'
 import './style.css'
+import MapPage from './views/MapPage.vue'
 
 Vue.use(Router)
 Vue.use(Meta)
@@ -27,6 +28,11 @@ export default new Router({
       name: 'Home',
       path: '/',
       component: Home,
+    },
+    {
+      name:'MapPage',
+      path:'/map',
+      component:MapPage
     },
     {
       name: '404 - Not Found',

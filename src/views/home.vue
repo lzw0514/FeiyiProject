@@ -3,6 +3,7 @@
     <app-navbar8
       link1Url="/"
       link2Url="/1"
+      link3Url="/map"
       rootClassName="navbar8root-class-name"
     >
       <template v-slot:link1>
