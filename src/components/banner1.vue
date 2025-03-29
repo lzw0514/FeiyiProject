@@ -5,6 +5,7 @@
         <h2 class="banner1-title thq-heading-2">
           <slot name="heading1">
             <!--Default content for heading1-->
+             <!--Default content for heading1-->
             <div class="banner1-fragment3">
               <span class="banner1-text5">
                 Discover China&apos;s Intangible Cultural Heritage
