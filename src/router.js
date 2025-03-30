@@ -5,6 +5,7 @@ import Meta from 'vue-meta'
 import Page from './views/baike'
 import Page1 from './views/denglu'
 import Home from './views/home'
+import Register from './views/register.vue'
 import NotFound from './views/not-found'
 import './style.css'
 import MapPage from './views/MapPage.vue'
@@ -23,6 +24,11 @@ export default new Router({
       name: 'Page1',
       path: '/page1',
       component: Page1,
+    },
+    {
+      name: 'Register',
+      path: '/register',
+      component: Register,
     },
     {
       name: 'Home',

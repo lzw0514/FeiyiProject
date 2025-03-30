@@ -240,7 +240,7 @@ export default {
 }
  
 .sign-in4-link {
-  text-decoration:  underline none;
+  text-decoration:  none;
 }
  
 .sign-in4-button {
