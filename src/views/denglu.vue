@@ -15,6 +15,11 @@
         </div>
       </template>
       <template v-slot:link4>
+        <div class="page1-fragment18">
+          <span class="page1-text18">非遗商城</span>
+        </div>
+      </template>
+      <template v-slot:link5>
         <div class="page1-fragment13">
           <span class="page1-text13">AI探索</span>
         </div>
@@ -37,11 +42,7 @@
           <span class="page1-text17">Contact</span>
         </div>
       </template>
-      <template v-slot:link31>
-        <div class="page1-fragment18">
-          <span class="page1-text18">非遗商城</span>
-        </div>
-      </template>
+
       <template v-slot:action1>
         <div class="page1-fragment19"><span class="page1-text19">登录</span></div>
       </template>
@@ -70,9 +71,9 @@
           <span class="page1-text24">Page Four Description</span>
         </div>
       </template>
-      <template v-slot:action11>
+      <!-- <template v-slot:action11>
         <div class="page1-fragment25"><span class="page1-text25">注册</span></div>
-      </template>
+      </template> -->
     </app-navbar8>
     <sign-in4>
       <template v-slot:action1>

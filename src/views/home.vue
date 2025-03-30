@@ -20,6 +20,11 @@
         </div>
       </template>
       <template v-slot:link4>
+        <div class="home-fragment18">
+          <span class="home-text18">非遗商城</span>
+        </div>
+      </template>
+      <template v-slot:link5>
         <div class="home-fragment13"><span class="home-text13">AI推荐</span></div>
       </template>
       <template v-slot:page1>
@@ -38,11 +43,6 @@
       <template v-slot:page4>
         <div class="home-fragment17">
           <span class="home-text17">Contact</span>
-        </div>
-      </template>
-      <template v-slot:link31>
-        <div class="home-fragment18">
-          <span class="home-text18">非遗商城</span>
         </div>
       </template>
       <template v-slot:action1>
@@ -73,9 +73,9 @@
           <span class="home-text24">Page Four Description</span>
         </div>
       </template>
-      <template v-slot:action11>
+      <!-- <template v-slot:action11>
         <div class="home-fragment25"><span class="home-text25">注册</span></div>
-      </template>
+      </template> -->
     </app-navbar8>
     <app-hero17
       image1Src="https://images.unsplash.com/photo-1598473032727-60824657847e?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDE1fHwlRTQlQkMlQTAlRTclQkIlOUYlRTYlOTYlODclRTUlOEMlOTZ8ZW58MHx8fHwxNzQyNjQ2ODUyfDA&amp;ixlib=rb-4.0.3&amp;w=1500"
