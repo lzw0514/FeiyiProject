@@ -102,7 +102,7 @@
             }
           });
   
-          if (response.data.code === 0) {
+          if (response.data.code === 1) {
             this.$router.push('/page1');  // 注册成功后跳转到登录页面
           } else {
             this.errorMessage = response.data.message || '注册失败';

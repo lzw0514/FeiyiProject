@@ -84,7 +84,7 @@ export default {
           }
         });
         
-        if (response.data.code === 0) {
+        if (response.data.code === 1) {
           localStorage.setItem('token', response.data.data);
           localStorage.setItem('username', response.data.data.username);
           localStorage.setItem('avatar', response.data.data.avatar); // 头像存入
