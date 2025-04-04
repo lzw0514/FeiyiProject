@@ -84,8 +84,12 @@ export default {
           }
         });
         
-        if (response.data.code === 0) {
-          localStorage.setItem('token', response.data.token);
+        if (response.data.code === 1) {
+          localStorage.setItem('token', response.data.data);
+          localStorage.setItem('username', response.data.data.username);
+          localStorage.setItem('avatar', response.data.data.avatar); // 头像存入
+          console.log('当前 avater:', response.data.data.avatar);
+          console.log('本地存储的 token:', localStorage.getItem('token'));
           this.$router.push('/');
         } else {
           this.errorMessage = response.data.message || '登录失败';

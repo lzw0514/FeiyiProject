@@ -46,26 +46,37 @@
               </div>
             </div>
           </nav>
-          <div class="navbar8-buttons1">
-            <button class="navbar8-action11 thq-button-animated thq-button-filled">
-              <router-link to="/page1" class="navbar8-link6">
-                <slot name="action11">
-                  <div class="navbar8-fragment25">
-                    <span class="navbar8-text27">登录</span>
-                  </div>
-                </slot>
-              </router-link>
-            </button>
-            <button class="navbar8-action12 thq-button-animated thq-button-filled">
-              <router-link to="/register" class="navbar8-link7">
-                <slot name="action12">
-                  <div class="navbar8-fragment26">
-                    <span class="navbar8-text28">注册</span>
-                  </div>
-                </slot>
-              </router-link>
-            </button>
+          <div v-if="!isLoggedIn">
+            <div class="navbar8-buttons1">
+              <button class="navbar8-action11 thq-button-animated thq-button-filled">
+                <router-link to="/page1" class="navbar8-link6">
+                  <slot name="action11">
+                    <div class="navbar8-fragment25">
+                      <span class="navbar8-text27">登录</span>
+                    </div>
+                  </slot>
+                </router-link>
+              </button>
+              <button class="navbar8-action12 thq-button-animated thq-button-filled">
+                <router-link to="/register" class="navbar8-link7">
+                  <slot name="action12">
+                    <div class="navbar8-fragment26">
+                      <span class="navbar8-text28">注册</span>
+                    </div>
+                  </slot>
+                </router-link>
+              </button>
+            </div>
           </div>
+          <div v-else class="user-menu">
+            <img :src="avatar" alt="用户头像" class="avatar" @mouseover="showDropdown = true" @mouseleave="hideDropdown">
+            <ul v-show="showDropdown" class="dropdown-menu" @mouseover="showDropdown = true" @mouseleave="hideDropdown">
+              <li><router-link to="/profile">个人主页</router-link></li>
+              <li><router-link to="/favorites">收藏项目</router-link></li>
+              <li @click="logout">退出登录</li>
+            </ul>
+          </div>
+
         </div>
       </header>
     </header>
@@ -95,14 +106,33 @@
         type: String,
         default: 'image',
       },
+    
+    },
+    computed: {
+    isLoggedIn() {
+      return !!localStorage.getItem('token');
+    },
 
+    avatar() {
+      return 'images/touxiang.png' ||localStorage.getItem('avatar');
+    }
     },
     data() {
       return {
-        link5AccordionOpen: false,
-        link5DropdownVisible: false,
+        showDropdown: false
       }
     },
+    methods: {
+    hideDropdown() {
+      setTimeout(() => { this.showDropdown = false }, 8000); // 延迟关闭
+    },
+    logout() {
+      localStorage.removeItem('token');
+      localStorage.removeItem('username');
+      localStorage.removeItem('avatar');
+      window.location.reload();
+    }
+    }
   }
   </script>
   
@@ -800,6 +830,7 @@
     align-self: flex-start;
   }
    
+
   @media(max-width: 767px) {
     .navbar8-navbar-interactive {
       padding-left: var(--dl-layout-space-twounits);
@@ -824,14 +855,35 @@
       display: none;
     }
   }
-   
-  @media(max-width: 479px) {
-    .navbar8-navbar-interactive {
-      padding: var(--dl-layout-space-unit);
-    }
-    .navbar8-mobile-menu {
-      padding: var(--dl-layout-space-unit);
-    }
-  }
-  </style>
+.user-menu {
+  position: relative;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  list-style: none;
+  padding: 0;
+}
+
+.dropdown-menu li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+  background: #f0f0f0;
+}
+</style>
   

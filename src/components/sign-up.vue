@@ -135,26 +135,28 @@ export default {
       return valid;
     },
 
-    async register() {
-      if (!this.validateForm()) {
-        return;
-      }
-
-      try {
-        const response = await axios.post('http://localhost:8081/user/register', {
-          username: this.username,
-          email: this.email,
-          password: this.password
-        }, {
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        });
-
-        if (response.data.code === 0) {
-          this.$router.push('/page1'); // 注册成功后跳转到登录页面
-        } else {
-          this.errorMessage = response.data.message || '注册失败';
+    methods: {
+      async register() {
+        if (this.password !== this.confirmPassword) {
+          this.errorMessage = '密码和确认密码不匹配';
+          return;
+        }
+  
+        try {
+          const response = await axios.post('http://localhost:8081/user/register', {
+            username: this.username,
+            email: this.email,
+            password: this.password
+          }, {
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          });
+  
+          if (response.data.code === 1) {
+            this.$router.push('/page1');  // 注册成功后跳转到登录页面
+          } else {
+            this.errorMessage = response.data.message || '注册失败';
         }
       } catch (error) {
         this.errorMessage = '注册失败，请稍后再试';
