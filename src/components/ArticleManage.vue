@@ -34,16 +34,12 @@
         </el-form>
   
         <!-- 表格 -->
-        <el-table
-          :data="items"
-          border
-          class="heritage-table"
-        >
+        <el-table :data="items" border class="heritage-table">
           <el-table-column type="index" label="序号" width="60" align="center" />
           <el-table-column prop="name" label="名称" align="center" />
           <el-table-column prop="category" label="类别" align="center" />
-          <el-table-column prop="application_area" label="申报地区或单位" align="center" />
-          <el-table-column prop="protection_unit" label="保护单位" align="center" />
+          <el-table-column prop="applicationArea" label="申报地区或单位" align="center" />
+          <el-table-column prop="protectionUnit" label="保护单位" align="center" />
         </el-table>
   
         <!-- 分页组件 -->
@@ -88,8 +84,9 @@
             region: this.filterRegion
           }
         }).then(response => {
-          this.items = response.data.list // 假设返回字段是 list 和 total
-          this.totalItems = response.data.total
+
+          this.items = response.data.data.records // 假设返回字段是 records 和 total
+          this.totalItems = response.data.data.total
         }).catch(error => {
           console.error('获取非遗列表失败:', error)
         })
@@ -122,7 +119,7 @@
     width: 100%;
     display: flex;
     min-height: 100vh;
-    height: 100vh;
+    height: auto;
     align-items: center;
     justify-content: center;
     background-color: #f9f9f9;

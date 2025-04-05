@@ -91,7 +91,7 @@ export default {
       image1Src: 'https://images.unsplash.com/photo-1723982155771-c5555cc15538?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTc0MjgyODA5OHw&ixlib=rb-4.0.3&q=80&w=1080',
       image1Alt: 'Chinese heritage sign up image',
       imageSrc: '/images/%C3%A7%C2%99%C2%BB%C3%A5%C2%BD%C2%95%C3%A7%C2%95%C2%8C%C3%A9%C2%9D%C2%A2-1500w.jpg',
-      imageAlt: 'image'
+      imageAlt: 'image',
     }
   },
 
@@ -134,29 +134,27 @@ export default {
 
       return valid;
     },
+    async register() {
+      if (this.password !== this.confirmPassword) {
+        this.errorMessage = '密码和确认密码不匹配';
+        return;
+      }
 
-    methods: {
-      async register() {
-        if (this.password !== this.confirmPassword) {
-          this.errorMessage = '密码和确认密码不匹配';
-          return;
-        }
-  
-        try {
-          const response = await axios.post('http://localhost:8081/user/register', {
-            username: this.username,
-            email: this.email,
-            password: this.password
-          }, {
-            headers: {
-              'Content-Type': 'application/json'
-            }
-          });
-  
-          if (response.data.code === 1) {
-            this.$router.push('/page1');  // 注册成功后跳转到登录页面
-          } else {
-            this.errorMessage = response.data.message || '注册失败';
+      try {
+        const response = await axios.post('http://localhost:8081/user/register', {
+          username: this.username,
+          email: this.email,
+          password: this.password
+        }, {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+
+        if (response.data.code === 1) {
+          this.$router.push('/page1');  // 注册成功后跳转到登录页面
+        } else {
+          this.errorMessage = response.data.message || '注册失败';
         }
       } catch (error) {
         this.errorMessage = '注册失败，请稍后再试';
