@@ -113,20 +113,20 @@
           try {
             const decoded = jwtDecode(token); // 解码 token
             const userId = decoded.claims.id;
-            const username = decoded.claims.username;
+            const userName = decoded.claims.userName;
             const heritageId = this.$route.params.id;
   
             if (this.isFavorite) {
               // 取消收藏
-              axios.post('http://localhost:8081/user/favorite/remove', {
-                userId,
-                username,
-                heritageId
-             }, {
-                 headers: {
-                     'Authorization': `Bearer ${localStorage.getItem('token')}`
-                 }
-             })
+              axios.delete('http://localhost:8081/user/favorite/remove', {
+                params: {
+                  userId,
+                  heritageId
+                },
+                headers: {
+                  'Authorization': `Bearer ${localStorage.getItem('token')}`
+                }
+              })
               .then(response => {
                 if (response.data.code==1) {
                   this.isFavorite = false; // 取消收藏成功后更新按钮状态
@@ -142,7 +142,7 @@
               // 添加收藏
             axios.post('http://localhost:8081/user/favorite/add', {
                 userId,
-                username,
+                userName,
                 heritageId
             }, {
                 headers: {
