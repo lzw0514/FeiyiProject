@@ -11,6 +11,7 @@
     "axios": "^1.8.4",
     "dangerous-html": "0.1.13",
     "element-ui": "^2.15.14",
+    "jwt-decode": "^4.0.0",
     "leaflet": "^1.9.4",
     "next": "^12.1.10",
     "react": "^17.0.2",

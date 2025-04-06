@@ -9,6 +9,7 @@ import Register from './views/register.vue'
 import NotFound from './views/not-found'
 import './style.css'
 import MapPage from './views/MapPage.vue'
+import HeritageDetail from './views/detail.vue'
 
 Vue.use(Router)
 Vue.use(Meta)
@@ -39,6 +40,11 @@ export default new Router({
       name:'MapPage',
       path:'/map',
       component:MapPage
+    },
+    {
+    name: 'HeritageDetail', // ✅ 新增非遗详情页面路由
+    path: '/heritage/:id',
+    component: HeritageDetail,
     },
     {
       name: '404 - Not Found',

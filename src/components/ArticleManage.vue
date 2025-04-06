@@ -36,7 +36,17 @@
         <!-- 表格 -->
         <el-table :data="items" border class="heritage-table">
           <el-table-column type="index" label="序号" width="60" align="center" />
-          <el-table-column prop="name" label="名称" align="center" />
+          <!-- <el-table-column prop="name" label="名称" align="center" /> -->
+          <el-table-column label="名称" align="center">
+            <template slot-scope="scope">
+              <router-link
+                :to="`/heritage/${scope.row.id}`"
+                style="color: #409EFF; text-decoration: none;"
+              >
+                {{ scope.row.name }}
+              </router-link>
+            </template>
+          </el-table-column>
           <el-table-column prop="category" label="类别" align="center" />
           <el-table-column prop="applicationArea" label="申报地区或单位" align="center" />
           <el-table-column prop="protectionUnit" label="保护单位" align="center" />
@@ -65,8 +75,17 @@
       return {
         filterCategory: '',
         filterRegion: '',
-        categoryOptions: ['传统技艺', '传统音乐', '传统舞蹈', '民间文学'],
-        regionOptions: ['河北省', '贵州省', '广东省'],
+        categoryOptions: ['民间文学', '传统音乐', '传统舞蹈', '传统戏剧','曲艺','传统体育、游艺与杂技','传统美术','传统技艺','传统医药','民俗'],
+        regionOptions: [
+          '北京市', '天津市', '上海市', '重庆市',
+          '河北省', '山西省', '辽宁省', '吉林省', '黑龙江省',
+          '江苏省', '浙江省', '安徽省', '福建省', '江西省', '山东省',
+          '河南省', '湖北省', '湖南省', '广东省', '海南省',
+          '四川省', '贵州省', '云南省', '陕西省', '甘肃省', '青海省',
+          '台湾省',
+          '内蒙古自治区', '广西壮族自治区', '西藏自治区', '宁夏回族自治区', '新疆维吾尔自治区',
+          '香港', '澳门'
+        ],
         items: [],         // 当前页数据
         totalItems: 0,     // 总数据条数
         currentPage: 1,    // 当前页码
