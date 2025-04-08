@@ -10,6 +10,7 @@ import NotFound from './views/not-found'
 import './style.css'
 import MapPage from './views/MapPage.vue'
 import HeritageDetail from './views/detail.vue'
+import AIPage from './views/ai-explore.vue'
 
 Vue.use(Router)
 Vue.use(Meta)
@@ -40,6 +41,11 @@ export default new Router({
       name:'MapPage',
       path:'/map',
       component:MapPage
+    },
+    {
+      name:'AIPage',
+      path:'/ai-explore',
+      component:AIPage
     },
     {
     name: 'HeritageDetail', // ✅ 新增非遗详情页面路由

@@ -26,7 +26,7 @@
                 </div>
               </slot>
             </a>
-            <div @click="link5DropdownVisible = !link5DropdownVisible" class="navbar8-link5-dropdown-trigger">
+<!--            <div @click="link5DropdownVisible = !link5DropdownVisible" class="navbar8-link5-dropdown-trigger">
               <span class="thq-body-small thq-link">
                 <slot name="link5">
                   <div><span>AI探索</span></div>
@@ -44,7 +44,13 @@
                   </svg>
                 </div>
               </div>
-            </div>
+            </div>-->
+            <router-link to="/ai-explore" class="navbar8-link5-dropdown-trigger thq-body-small thq-link">
+              <slot name="link5">
+                <div><span>AI探索</span></div>
+              </slot>
+            </router-link>
+
           </nav>
           <div v-if="!isLoggedIn">
             <div class="navbar8-buttons1">
@@ -101,6 +107,10 @@
       link4Url: {
         type: String,
         default: '/map',
+      },
+      link5Url: {
+        type: String,
+        default: '/ai-explore',
       },
       page1ImageAlt: {
         type: String,
