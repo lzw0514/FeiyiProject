@@ -8,9 +8,12 @@ import Home from './views/home'
 import Register from './views/register.vue'
 import NotFound from './views/not-found'
 import './style.css'
-import MapPage from './views/MapPage.vue'
+import knowledge from './views/knowledge.vue'
 import HeritageDetail from './views/detail.vue'
 import AIPage from './views/ai-explore.vue'
+import Myfavorites from './views/myfavorites.vue'
+import Knowledge from './views/knowledge.vue'
+import MyProfile from './views/myhome.vue'
 
 Vue.use(Router)
 Vue.use(Meta)
@@ -38,9 +41,9 @@ export default new Router({
       component: Home,
     },
     {
-      name:'MapPage',
-      path:'/map',
-      component:MapPage
+      name:'Knowledge',
+      path:'/knowledge',
+      component:Knowledge
     },
     {
       name:'AIPage',
@@ -51,6 +54,16 @@ export default new Router({
     name: 'HeritageDetail', // ✅ 新增非遗详情页面路由
     path: '/heritage/:id',
     component: HeritageDetail,
+    },
+    {
+      name: 'FavoriteList',
+      path: '/favorites',
+      component: Myfavorites,
+    },
+    {
+      name:'Profile',
+      path:'/profile',
+      component:MyProfile,
     },
     {
       name: '404 - Not Found',

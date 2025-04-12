@@ -16,35 +16,10 @@
             </a>
             <a :href="link3Url" target="_blank" rel="noreferrer noopener" class="navbar8-link31 thq-body-small thq-link">
               <slot name="link3">
-                <div><span>地图探索</span></div>
+                <div><span>知识问答</span></div>
               </slot>
             </a>
-            <a :href="link4Url" target="_blank" rel="noreferrer noopener" class="navbar8-link4 thq-body-small thq-link">
-              <slot name="link4">
-                <div class="navbar8-fragment15">
-                  <span class="navbar8-text17">非遗商城</span>
-                </div>
-              </slot>
-            </a>
-<!--            <div @click="link5DropdownVisible = !link5DropdownVisible" class="navbar8-link5-dropdown-trigger">
-              <span class="thq-body-small thq-link">
-                <slot name="link5">
-                  <div><span>AI探索</span></div>
-                </slot>
-              </span>
-              <div class="navbar8-icon-container1">
-                <div v-if="link5DropdownVisible" class="navbar8-container2">
-                  <svg viewBox="0 0 1024 1024" class="navbar8-icon10">
-                    <path d="M298 426h428l-214 214z"></path>
-                  </svg>
-                </div>
-                <div v-if="!link5DropdownVisible" class="navbar8-container3">
-                  <svg viewBox="0 0 1024 1024" class="navbar8-icon12">
-                    <path d="M426 726v-428l214 214z"></path>
-                  </svg>
-                </div>
-              </div>
-            </div>-->
+        
             <router-link to="/ai-explore" class="navbar8-link5-dropdown-trigger thq-body-small thq-link">
               <slot name="link5">
                 <div><span>AI探索</span></div>
@@ -102,7 +77,7 @@
       },
       link3Url: {
         type: String,
-        default: '/map',
+        default: '/knowledge',
       },
       link4Url: {
         type: String,
