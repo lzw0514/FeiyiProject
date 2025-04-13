@@ -154,7 +154,7 @@ export default {
     handleButtonClick() {
       if (this.isSubmitted) {
         // 在此处理查看排行榜的逻辑
-        this.viewLeaderboard()
+          this.$router.push({ name: 'Ranking' });
       } else {
         this.submitAnswers()
       }

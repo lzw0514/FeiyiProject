@@ -14,6 +14,7 @@ import AIPage from './views/ai-explore.vue'
 import Myfavorites from './views/myfavorites.vue'
 import Knowledge from './views/knowledge.vue'
 import MyProfile from './views/myhome.vue'
+import Rank from './views/rank.vue'
 
 Vue.use(Router)
 Vue.use(Meta)
@@ -70,6 +71,11 @@ export default new Router({
       path: '**',
       component: NotFound,
       fallback: true,
+    },
+    {
+      path: '/rank',
+      name: 'Ranking',
+      component: Rank,
     },
   ],
 })
