@@ -1,12 +1,9 @@
 <template>
   <div class="home-container">
     <app-navbar8
-      link1Url="/"
-      link2Url="/1"
-      link3Url="/map"
       rootClassName="navbar8root-class-name"
     >
-      <template v-slot:link1>
+      <!-- <template v-slot:link1>
         <div class="home-fragment10"><span class="home-text10">首页</span></div>
       </template>
       <template v-slot:link2>
@@ -72,7 +69,7 @@
         <div class="home-fragment24">
           <span class="home-text24">Page Four Description</span>
         </div>
-      </template>
+      </template> -->
       <!-- <template v-slot:action11>
         <div class="home-fragment25"><span class="home-text25">注册</span></div>
       </template> -->
