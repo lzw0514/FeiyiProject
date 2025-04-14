@@ -25,7 +25,7 @@
                   class="border-b border-red-200 hover:bg-red-50 transition-all ease-in-out duration-200"
                 >
                   <td class="py-4">{{ index + 1 }}</td>
-                  <td>{{ user.userId }}</td>
+                  <td>{{ user.userName }}</td>
                   <td>{{ user.points }}</td>
                   <td class="text-red-600">{{ getTitle(user.level) }}</td>
                 </tr>
@@ -241,7 +241,7 @@ table td {
     name: 'Ranking',
     data() {
       return {
-        userId: null,
+        userName: null,
         top10Users: [],
         bgImage: 'https://img.zcool.cn/community/01b7e55bcd93f8a8012062e04b84d6.jpg'
       };
