@@ -1,6 +1,13 @@
 <template>
   <div class="quiz-container">
-    <h1 class="title">非遗知识答题</h1>
+    <div class="header">
+      <h1 class="title">
+        非遗知识答题
+        <span class="separator">|</span>
+        <span class="leaderboard-icon" @click="goToLeaderboard" title="查看排行榜">🏆</span>
+      </h1>
+    </div>
+
     <div
       v-for="(q, index) in questions"
       :key="q.id"
@@ -13,7 +20,6 @@
         class="option"
       >
         <label>
-          <!-- 多选题 -->
           <input
             v-if="q.type === '多选题'"
             type="checkbox"
@@ -21,7 +27,6 @@
             :value="key"
             v-model="userAnswers[q.id]"
           />
-          <!-- 单选题 & 判断题 -->
           <input
             v-else
             type="radio"
@@ -49,15 +54,18 @@
 
     <div class="button-container">
       <button
-        @click="handleButtonClick"
+        v-if="!isSubmitted"
+        @click="submitAnswers"
         class="submit-button"
       >
-        {{ isSubmitted ? '查看排行榜' : '提交' }}
+        提交
       </button>
       <button @click="loadQuestions" class="reload-button">换一组</button>
     </div>
+
   </div>
 </template>
+
 
 <script>
 import axios from 'axios'
@@ -72,7 +80,7 @@ export default {
       results: [],
       showResult: false,
       userId: '',
-      isSubmitted: false // 新增状态标记，表示是否已提交答案
+      isSubmitted: false
     }
   },
   mounted () {
@@ -113,7 +121,7 @@ export default {
           this.userAnswers = {}
           this.results = []
           this.showResult = false
-          this.isSubmitted = false // 重置提交状态
+          this.isSubmitted = false
 
           this.questions.forEach(q => {
             this.userAnswers[q.id] = q.type === '多选题' ? [] : ''
@@ -145,31 +153,14 @@ export default {
             }
           })
           this.showResult = true
-          this.isSubmitted = true // 设置为已提交
+          this.isSubmitted = true
         }
       } catch (err) {
         console.error('提交答案失败:', err)
       }
     },
-    handleButtonClick() {
-      if (this.isSubmitted) {
-        // 在此处理查看排行榜的逻辑
-          this.$router.push({ name: 'Ranking' });
-      } else {
-        this.submitAnswers()
-      }
-    },
-    async viewLeaderboard() {
-      // 假设我们有一个接口来获取排行榜数据
-      try {
-        const res = await axios.get('http://localhost:8081/leaderboard')
-        if (res.data.code === 1) {
-          // 在这里处理显示排行榜的逻辑
-          console.log(res.data.data)  // 打印排行榜数据
-        }
-      } catch (err) {
-        console.error('获取排行榜失败:', err)
-      }
+    goToLeaderboard () {
+      this.$router.push({ name: 'Ranking' }) 
     }
   }
 }
@@ -283,5 +274,39 @@ h1.title {
 .reload-button:hover {
   background-color: #455a64;
   transform: translateY(-2px);
+}
+
+/* 标题内分隔符 */
+.separator {
+  margin: 0 12px;
+  color: #bbb;
+  font-weight: normal;
+}
+
+/* 排行榜链接 */
+.leaderboard-link {
+  font-size: 18px;
+  color: #ff9800;
+  text-decoration: none;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+}
+
+.leaderboard-link:hover {
+  color: #019f43;
+  border-bottom: 2px solid #019f43;
+}
+/* 排行榜图标样式 */
+.leaderboard-icon {
+  font-size: 22px;
+  cursor: pointer;
+  margin-left: 0px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.leaderboard-icon:hover {
+  color: #019f43;
+  transform: scale(1.2);
 }
 </style>

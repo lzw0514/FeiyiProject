@@ -8,7 +8,6 @@ import Home from './views/home'
 import Register from './views/register.vue'
 import NotFound from './views/not-found'
 import './style.css'
-import knowledge from './views/knowledge.vue'
 import HeritageDetail from './views/detail.vue'
 import AIPage from './views/ai-explore.vue'
 import Myfavorites from './views/myfavorites.vue'
@@ -67,15 +66,16 @@ export default new Router({
       component:MyProfile,
     },
     {
+      name: 'Ranking',
+      path: '/rank',
+      component: Rank,
+    },
+    {
       name: '404 - Not Found',
       path: '**',
       component: NotFound,
       fallback: true,
     },
-    {
-      path: '/rank',
-      name: 'Ranking',
-      component: Rank,
-    },
+
   ],
 })
