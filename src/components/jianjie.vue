@@ -63,11 +63,11 @@
     methods: {
       fetchProfile() {
         axios
-          .get(`http://localhost:8081/api/user/info`, {
+          .get(`http://localhost:8081/user/info`, {
             params: { userId: this.userId }
           })
           .then((res) => {
-            this.form = { ...this.form, ...res.data };
+            this.form = { ...this.form, ...res.data.data };
           })
           .catch(() => {
             this.$message.error('获取用户信息失败');
@@ -75,7 +75,7 @@
       },
       submit() {
         axios
-          .post(`http://localhost:8081/api/user/update`, {
+          .post(`http://localhost:8081/user/update`, {
             userId: this.userId,
             ...this.form
           })
