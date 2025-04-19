@@ -23,12 +23,12 @@
           </slot>
         </p>
       </div>
-      <div class="hero17-actions">
+      <!-- <div class="hero17-actions">
         <button class="thq-button-filled hero17-button1">
           <span class="thq-body-small">
-            <slot name="action1">
+            <slot name="action1"> -->
               <!--Default content for action1-->
-              <div class="hero17-fragment1">
+              <!-- <div class="hero17-fragment1">
                 <span class="hero17-text5">Learn More</span>
               </div>
             </slot>
@@ -36,15 +36,15 @@
         </button>
         <button class="thq-button-outline hero17-button2">
           <span class="thq-body-small">
-            <slot name="action2">
+            <slot name="action2"> -->
               <!--Default content for action2-->
-              <div class="hero17-fragment4">
+              <!-- <div class="hero17-fragment4">
                 <span class="hero17-text8">Explore Heritage Sites</span>
               </div>
             </slot>
           </span>
-        </button>
-      </div>
+        </button> -->
+      <!-- </div> -->
     </div>
     <div class="hero17-content2">
       <div

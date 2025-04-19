@@ -25,7 +25,7 @@
               </p>
             </div>
             <div class="cta26-actions">
-              <router-link to="/1" class="cta26-navlink thq-button-filled">
+              <router-link to="/encyclopedia" class="cta26-navlink thq-button-filled">
                 <span>
                   <slot name="action1">
                     <!--Default content for action1-->

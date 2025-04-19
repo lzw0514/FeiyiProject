@@ -53,7 +53,6 @@
             <img :src="avatar" alt="用户头像" class="avatar" @mouseover="showDropdown = true" @mouseleave="hideDropdown">
             <ul v-show="showDropdown" class="dropdown-menu" @mouseover="showDropdown = true" @mouseleave="hideDropdown">
               <li><router-link to="/profile">个人主页</router-link></li>
-              <li><router-link to="/favorites">收藏项目</router-link></li>
               <li @click="logout">退出登录</li>
             </ul>
           </div>
@@ -73,7 +72,7 @@
       },
       link2Url: {
         type: String,
-        default: '/1',
+        default: '/encyclopedia',
       },
       link3Url: {
         type: String,
