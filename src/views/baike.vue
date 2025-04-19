@@ -1,6 +1,6 @@
 <template>
   <div class="page-container">
-    <app-navbar8 link1Url="/" link2Url="/1">
+    <app-navbar8 >
     </app-navbar8>
     <ArticleManage>shishi</ArticleManage>
     <app-footer4>

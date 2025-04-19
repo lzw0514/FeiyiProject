@@ -5,9 +5,9 @@ import router from './router'
 import LottieVuePlayer from '@lottiefiles/vue-lottie-player'
 
 // 1. 引入 Element UI
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
 
+import 'element-ui/lib/theme-chalk/index.css'
+import ElementUI from 'element-ui'
 // 2. 使用 Element UI
 Vue.use(ElementUI)
 

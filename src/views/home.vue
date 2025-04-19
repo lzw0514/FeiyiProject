@@ -3,90 +3,11 @@
     <app-navbar8
       rootClassName="navbar8root-class-name"
     >
-      <!-- <template v-slot:link1>
-        <div class="home-fragment10"><span class="home-text10">首页</span></div>
-      </template>
-      <template v-slot:link2>
-        <div class="home-fragment11">
-          <span class="home-text11">非遗百科</span>
-        </div>
-      </template>
-      <template v-slot:link3>
-        <div class="home-fragment12">
-          <span class="home-text12">地图探索</span>
-        </div>
-      </template>
-      <template v-slot:link4>
-        <div class="home-fragment18">
-          <span class="home-text18">非遗商城</span>
-        </div>
-      </template>
-      <template v-slot:link5>
-        <div class="home-fragment13"><span class="home-text13">AI推荐</span></div>
-      </template>
-      <template v-slot:page1>
-        <div class="home-fragment14"><span class="home-text14">Home</span></div>
-      </template>
-      <template v-slot:page2>
-        <div class="home-fragment15">
-          <span class="home-text15">Introduction</span>
-        </div>
-      </template>
-      <template v-slot:page3>
-        <div class="home-fragment16">
-          <span class="home-text16">Cultural Heritage Inheritors</span>
-        </div>
-      </template>
-      <template v-slot:page4>
-        <div class="home-fragment17">
-          <span class="home-text17">Contact</span>
-        </div>
-      </template>
-      <template v-slot:action1>
-        <div class="home-fragment19"><span class="home-text19">登录</span></div>
-      </template>
-      <template v-slot:action2>
-        <div class="home-fragment20">
-          <span class="home-text20">Secondary Action</span>
-        </div>
-      </template>
-      <template v-slot:page1Description>
-        <div class="home-fragment21">
-          <span class="home-text21">Page One Description</span>
-        </div>
-      </template>
-      <template v-slot:page2Description>
-        <div class="home-fragment22">
-          <span class="home-text22">Page Two Description</span>
-        </div>
-      </template>
-      <template v-slot:page3Description>
-        <div class="home-fragment23">
-          <span class="home-text23">Page Three Description</span>
-        </div>
-      </template>
-      <template v-slot:page4Description>
-        <div class="home-fragment24">
-          <span class="home-text24">Page Four Description</span>
-        </div>
-      </template> -->
-      <!-- <template v-slot:action11>
-        <div class="home-fragment25"><span class="home-text25">注册</span></div>
-      </template> -->
     </app-navbar8>
     <app-hero17
       image1Src="https://images.unsplash.com/photo-1598473032727-60824657847e?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDE1fHwlRTQlQkMlQTAlRTclQkIlOUYlRTYlOTYlODclRTUlOEMlOTZ8ZW58MHx8fHwxNzQyNjQ2ODUyfDA&amp;ixlib=rb-4.0.3&amp;w=1500"
     >
-      <template v-slot:action1>
-        <div class="home-fragment26">
-          <span class="home-text26">Learn More</span>
-        </div>
-      </template>
-      <template v-slot:action2>
-        <div class="home-fragment27">
-          <span class="home-text27">Explore Heritage Sites</span>
-        </div>
-      </template>
+     
       <template v-slot:content1>
         <div class="home-fragment28">
           <span class="home-text28">

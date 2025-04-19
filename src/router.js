@@ -10,7 +10,7 @@ import NotFound from './views/not-found'
 import './style.css'
 import HeritageDetail from './views/detail.vue'
 import AIPage from './views/ai-explore.vue'
-import Myfavorites from './views/myfavorites.vue'
+
 import Knowledge from './views/knowledge.vue'
 import MyProfile from './views/myhome.vue'
 import Rank from './views/rank.vue'
@@ -22,7 +22,7 @@ export default new Router({
   routes: [
     {
       name: 'Page',
-      path: '/1',
+      path: '/encyclopedia',
       component: Page,
     },
     {
@@ -55,11 +55,7 @@ export default new Router({
     path: '/heritage/:id',
     component: HeritageDetail,
     },
-    {
-      name: 'FavoriteList',
-      path: '/favorites',
-      component: Myfavorites,
-    },
+
     {
       name:'Profile',
       path:'/profile',

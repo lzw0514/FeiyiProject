@@ -1,24 +1,24 @@
 <template>
-    <div class="favorite-list-container">
-      <h2 class="title">我的收藏</h2>
+    <div class="comment-list-container">
+      <h2 class="title">我的评论</h2>
   
-      <div v-if="heritageList.length">
-        <table class="heritage-table">
+      <div v-if="commentList.length">
+        <table class="comment-table">
           <thead>
             <tr>
               <th>项目名称</th>
-              <th>所属类别</th>
-              <th>申报地区</th>
+              <th>评论内容</th>
+              <th>评论时间</th>
               <th>操作</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="item in heritageList" :key="item.id">
-              <td>{{ item.name }}</td>
-              <td>{{ item.category }}</td>
-              <td>{{ item.applicationArea }}</td>
+            <tr v-for="item in commentList" :key="item.id">
+              <td>{{ item.heritageName }}</td>
+              <td>{{ item.content }}</td>
+              <td>{{ formatDate(item.createTime) }}</td>
               <td>
-                <router-link :to="`/heritage/${item.id}`" class="detail-link">查看详情</router-link>
+                <router-link :to="`/heritage/${item.heritageId}`" class="detail-link">查看详情</router-link>
               </td>
             </tr>
           </tbody>
@@ -32,8 +32,7 @@
       </div>
   
       <div v-else class="empty">
-        <img src="/images/empty.png" alt="空" class="empty-image" />
-        <p>您还没有收藏任何非遗项目</p>
+        <p>您还没有发表任何评论</p>
       </div>
     </div>
   </template>
@@ -43,11 +42,11 @@
   import { jwtDecode } from 'jwt-decode';
   
   export default {
-    name: 'FavoriteList',
+    name: 'MyComments',
     data() {
       return {
         userId: null,
-        heritageList: [],
+        commentList: [],
         page: 1,
         pageSize: 10,
         totalPages: 0
@@ -64,14 +63,14 @@
       try {
         const decoded = jwtDecode(token);
         this.userId = decoded.claims.id;
-        this.fetchFavorites();
+        this.fetchComments();
       } catch (e) {
         console.error('Token解析失败', e);
       }
     },
     methods: {
-      fetchFavorites() {
-        axios.get('http://localhost:8081/user/favorite/list', {
+      fetchComments() {
+        axios.get('http://localhost:8081/user/comment/list', {
           params: {
             userId: this.userId,
             page: this.page,
@@ -82,26 +81,30 @@
           }
         }).then(res => {
           const result = res.data.data;
-          this.heritageList = result.records;
+          this.commentList = result.records;
           this.totalPages = Math.ceil(result.total / this.pageSize);
         }).catch(err => {
-          console.error('获取收藏列表失败', err);
+          console.error('获取评论列表失败', err);
         });
       },
       changePage(newPage) {
         this.page = newPage;
-        this.fetchFavorites();
+        this.fetchComments();
+      },
+      formatDate(dateStr) {
+        const date = new Date(dateStr);
+        return date.toLocaleString();
       }
     }
   };
   </script>
   
   <style scoped>
-  .favorite-list-container {
-    padding: 40px;
+  .comment-list-container {
+    padding: 20px;
     background: #ffffff;
-    max-width: 960px;
-    margin: 40px auto;
+    max-width: 1000px;
+    margin: 10px auto;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   }
@@ -114,27 +117,27 @@
     color: #e65a03;
   }
   
-  .heritage-table {
+  .comment-table {
     width: 100%;
     border-collapse: collapse;
     border-radius: 10px;
     overflow: hidden;
   }
   
-  .heritage-table th,
-  .heritage-table td {
+  .comment-table th,
+  .comment-table td {
     padding: 14px 18px;
     text-align: left;
     border-bottom: 1px solid #f0f0f0;
   }
   
-  .heritage-table th {
+  .comment-table th {
     background-color: #f9fafc;
     color: #555;
     font-weight: 500;
   }
   
-  .heritage-table tr:hover {
+  .comment-table tr:hover {
     background-color: #f5f7fa;
     transition: background 0.2s ease;
   }
@@ -176,12 +179,6 @@
     color: #999;
     font-size: 16px;
     margin-top: 50px;
-  }
-  
-  .empty-image {
-    width: 120px;
-    opacity: 0.6;
-    margin-bottom: 16px;
   }
   </style>
   
