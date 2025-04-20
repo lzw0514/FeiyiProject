@@ -164,12 +164,12 @@ export default {
     feature2ImgSrc: {
       type: String,
       default:
-        'https://images.unsplash.com/photo-1678022556325-d16c9a516954?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTc0MjY0NjU3MXw&ixlib=rb-4.0.3&q=80&w=1080',
+          '/images/yinyue.jpg',
     },
     feature3ImgSrc1: {
       type: String,
       default:
-        'https://images.unsplash.com/photo-1713095390157-50cd43ac4df7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTc0MjY0NjU3MHw&ixlib=rb-4.0.3&q=80&w=1080',
+          '/images/quyi.jpg',
     },
     feature3ImgAlt: {
       type: String,
@@ -182,12 +182,12 @@ export default {
     feature1ImgSrc: {
       type: String,
       default:
-        'https://images.unsplash.com/photo-1698370399718-e011fe4caec8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTc0MjY0NjU3MXw&ixlib=rb-4.0.3&q=80&w=1400',
+          '/images/wenxue.jpg',
     },
     feature3ImgSrc: {
       type: String,
       default:
-        'https://images.unsplash.com/photo-1713095390157-50cd43ac4df7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTc0MjY0NjU3MHw&ixlib=rb-4.0.3&q=80&w=1080',
+          '/images/wudao.jpg',
     },
     feature3ImgAlt2: {
       type: String,
@@ -196,7 +196,7 @@ export default {
     feature3ImgSrc2: {
       type: String,
       default:
-        'https://images.unsplash.com/photo-1713095390157-50cd43ac4df7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTc0MjY0NjU3MHw&ixlib=rb-4.0.3&q=80&w=1080',
+          '/images/feiyi10.jpg',
     },
   },
   data() {

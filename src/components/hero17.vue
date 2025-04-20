@@ -222,7 +222,7 @@ export default {
     image11Src: {
       type: String,
       default:
-        'https://images.unsplash.com/photo-1728968593128-15e9fbbc3cfa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTc0MjY0NjU3MHw&ixlib=rb-4.0.3&q=80&w=1080',
+          '/images/feiyi12.jpg',
     },
     image7Alt: {
       type: String,
@@ -231,12 +231,12 @@ export default {
     image8Src: {
       type: String,
       default:
-        'https://images.unsplash.com/photo-1631101642393-f296dcd85afd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTc0MjY0NjU3M3w&ixlib=rb-4.0.3&q=80&w=1080',
+          '/images/feiyi4.jpg',
     },
     image4Src: {
       type: String,
       default:
-        'https://images.unsplash.com/photo-1700811432195-a064f44a4f9f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTc0MjY0NjU4M3w&ixlib=rb-4.0.3&q=80&w=1080',
+          '/images/feiyi5.jpg',
     },
     image3Alt: {
       type: String,
@@ -249,17 +249,17 @@ export default {
     image10Src: {
       type: String,
       default:
-        'https://images.unsplash.com/photo-1682813116052-3e4a71cca37f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTc0MjY0NjU4M3w&ixlib=rb-4.0.3&q=80&w=1080',
+          '/images/feiyi6.jpg',
     },
     image7Src: {
       type: String,
       default:
-        'https://images.unsplash.com/photo-1705143072258-015ee6a81abd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTc0MjY0NjU3MHw&ixlib=rb-4.0.3&q=80&w=1080',
+          '/images/feiyi7.jpg',
     },
     image2Src: {
       type: String,
       default:
-        'https://images.unsplash.com/photo-1700962558840-082fbd225dda?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTc0MjY0NjU2OXw&ixlib=rb-4.0.3&q=80&w=1080',
+          '/images/feiyi8.jpg',
     },
     image9Alt: {
       type: String,
@@ -268,7 +268,7 @@ export default {
     image9Src: {
       type: String,
       default:
-        'https://images.unsplash.com/photo-1632376930162-623a5a8620ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTc0MjY0NjU3Mnw&ixlib=rb-4.0.3&q=80&w=1080',
+          '/images/feiyi13.jpg',
     },
     image6Alt: {
       type: String,
@@ -285,7 +285,7 @@ export default {
     image6Src: {
       type: String,
       default:
-        'https://images.unsplash.com/photo-1608815059819-6860b031409d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTc0MjY0NjU3MXw&ixlib=rb-4.0.3&q=80&w=1080',
+          '/images/feiyi9.jpg',
     },
     image11Alt: {
       type: String,
@@ -294,7 +294,7 @@ export default {
     image1Src: {
       type: String,
       default:
-        '/images/%C3%A7%C2%99%C2%BB%C3%A5%C2%BD%C2%95%C3%A7%C2%95%C2%8C%C3%A9%C2%9D%C2%A2-1500w.jpg',
+          '/images/feiyi9.jpg',
     },
     image8Alt: {
       type: String,
@@ -312,7 +312,7 @@ export default {
     image3Src: {
       type: String,
       default:
-        'https://images.unsplash.com/photo-1737376409949-ea8a1d843913?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTc0MjY0NjU2OXw&ixlib=rb-4.0.3&q=80&w=1080',
+          '/images/feiyi10.jpg',
     },
     image5Alt: {
       type: String,
@@ -321,7 +321,7 @@ export default {
     image12Src: {
       type: String,
       default:
-        'https://images.unsplash.com/photo-1721713943215-946e2bf70390?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTc0MjY0NjU3MXw&ixlib=rb-4.0.3&q=80&w=1080',
+          '/images/feiyi11.jpg',
     },
     image2Alt: {
       type: String,

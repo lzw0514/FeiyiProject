@@ -66,9 +66,9 @@ export default {
       username: '',
       password: '',
       errorMessage: '',
-      image1Src: 'https://images.unsplash.com/photo-1723982155771-c5555cc15538?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTc0MjgyODA5OHw&ixlib=rb-4.0.3&q=80&w=1080',
+      image1Src: '/images/denglu.jpg',
       image1Alt: 'Chinese heritage sign in image',
-      imageSrc: '/images/%C3%A7%C2%99%C2%BB%C3%A5%C2%BD%C2%95%C3%A7%C2%95%C2%8C%C3%A9%C2%9D%C2%A2-1500w.jpg',
+      imageSrc: '/images/denglu.jpg',
       imageAlt: 'image'
     }
   },

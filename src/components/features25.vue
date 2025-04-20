@@ -163,12 +163,12 @@ export default {
     feature3ImgSrc1: {
       type: String,
       default:
-        'https://images.unsplash.com/photo-1723457136601-c8a9bffbb2ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTc0MjY0NjU3MXw&ixlib=rb-4.0.3&q=80&w=1080',
+          '/images/feiyi17.jpg',
     },
     feature1ImgSrc: {
       type: String,
       default:
-        'https://images.unsplash.com/photo-1599559006392-7b5cd5ff0c4c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTc0MjY0NjU3MHw&ixlib=rb-4.0.3&q=80&w=1080',
+          '/images/feiyi12.jpg',
     },
     feature3ImgAlt1: {
       type: String,
@@ -181,7 +181,7 @@ export default {
     feature3ImgSrc: {
       type: String,
       default:
-        'https://images.unsplash.com/photo-1723457136601-c8a9bffbb2ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTc0MjY0NjU3MXw&ixlib=rb-4.0.3&q=80&w=1080',
+          '/images/feiyi19.jpg',
     },
     feature3ImgAlt: {
       type: String,
@@ -190,7 +190,7 @@ export default {
     feature2ImgSrc: {
       type: String,
       default:
-        'https://images.unsplash.com/photo-1630309423020-91a63a932296?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTc0MjY0NjU3MXw&ixlib=rb-4.0.3&q=80&w=1080',
+          '/images/feiyi4.jpg',
     },
     feature3ImgAlt2: {
       type: String,
@@ -199,7 +199,7 @@ export default {
     feature3ImgSrc2: {
       type: String,
       default:
-        'https://images.unsplash.com/photo-1723457136601-c8a9bffbb2ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTc0MjY0NjU3MXw&ixlib=rb-4.0.3&q=80&w=1080',
+          '/images/yiyao.jpg',
     },
   },
   data() {
