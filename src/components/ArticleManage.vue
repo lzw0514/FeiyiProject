@@ -95,7 +95,7 @@
     methods: {
       // 获取数据（含分页 + 筛选）
       fetchHeritageList() {
-        axios.get('1/heritage/list', {
+        axios.get('/heritage/list', {
           params: {
             page: this.currentPage,
             pageSize: this.pageSize,
