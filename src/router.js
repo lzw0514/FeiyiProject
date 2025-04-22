@@ -16,62 +16,78 @@ import MyProfile from './views/myhome.vue'
 import Rank from './views/rank.vue'
 
 Vue.use(Router)
-Vue.use(Meta)
-export default new Router({
+// Vue.use(Meta)
+
+const router = new Router({
   mode: 'history',
   routes: [
+    {
+      name: 'Home',
+      path: '/',
+      component: Home,
+      meta: { title: '非遗网 - 首页' }
+    },
     {
       name: 'Page',
       path: '/encyclopedia',
       component: Page,
+      meta: { title: '非遗百科 - 非遗网' }
     },
     {
       name: 'Page1',
       path: '/page1',
       component: Page1,
+      meta: { title: '登录 - 非遗网' }
     },
     {
       name: 'Register',
       path: '/register',
       component: Register,
+      meta: { title: '注册 - 非遗网' }
     },
     {
-      name: 'Home',
-      path: '/',
-      component: Home,
+      name: 'Knowledge',
+      path: '/knowledge',
+      component: Knowledge,
+      meta: { title: '非遗知识 - 非遗网' }
     },
     {
-      name:'Knowledge',
-      path:'/knowledge',
-      component:Knowledge
+      name: 'AIPage',
+      path: '/ai-explore',
+      component: AIPage,
+      meta: { title: 'AI探索 - 非遗网' }
     },
     {
-      name:'AIPage',
-      path:'/ai-explore',
-      component:AIPage
+      name: 'HeritageDetail',
+      path: '/heritage/:id',
+      component: HeritageDetail,
+      meta: { title: '非遗详情 - 非遗网' }
     },
     {
-    name: 'HeritageDetail', // ✅ 新增非遗详情页面路由
-    path: '/heritage/:id',
-    component: HeritageDetail,
-    },
-
-    {
-      name:'Profile',
-      path:'/profile',
-      component:MyProfile,
+      name: 'Profile',
+      path: '/profile',
+      component: MyProfile,
+      meta: { title: '我的主页 - 非遗网' }
     },
     {
       name: 'Ranking',
       path: '/rank',
       component: Rank,
+      meta: { title: '排行榜 - 非遗网' }
     },
     {
       name: '404 - Not Found',
       path: '**',
       component: NotFound,
-      fallback: true,
-    },
-
-  ],
+      meta: { title: '页面未找到 - 非遗网' }
+    }
+  ]
 })
+
+// ✅ 全局前置守卫：根据路由元信息动态设置标题
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title || '非遗网'
+  next()
+})
+
+export default router

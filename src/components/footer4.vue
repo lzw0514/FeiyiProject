@@ -24,38 +24,7 @@
             rel="noreferrer noopener"
             class="thq-body-small"
           >
-            <slot name="link1">
-              <!--Default content for link1-->
-              <div class="footer4-fragment1">
-                <span class="footer4-text14">关于我们</span>
-              </div>
-            </slot>
-          </a>
-          <a
-            href="https://example.com"
-            target="_blank"
-            rel="noreferrer noopener"
-            class="thq-body-small"
-          >
-            <slot name="link2">
-              <!--Default content for link2-->
-              <div class="footer4-fragment4">
-                <span class="footer4-text17">联系我们</span>
-              </div>
-            </slot>
-          </a>
-          <a
-            href="https://example.com"
-            target="_blank"
-            rel="noreferrer noopener"
-            class="thq-body-small"
-          >
-            <slot name="link5">
-              <!--Default content for link5-->
-              <div class="footer4-fragment3">
-                <span class="footer4-text16">隐私与政策</span>
-              </div>
-            </slot>
+   
           </a>
         </div>
       </div>
@@ -63,34 +32,9 @@
         <div class="thq-divider-horizontal"></div>
         <div class="footer4-row">
           <div class="footer4-container">
-            <span class="thq-body-small">非遗览</span>
+            <span class="thq-body-small">非遗网</span>
           </div>
-          <div class="footer4-footer-links">
-            <span class="footer4-text11 thq-body-small">
-              <slot name="privacyLink">
-                <!--Default content for privacyLink-->
-                <div class="footer4-fragment5">
-                  <span class="footer4-text18">Privacy Policy</span>
-                </div>
-              </slot>
-            </span>
-            <span class="thq-body-small">
-              <slot name="termsLink">
-                <!--Default content for termsLink-->
-                <div class="footer4-fragment6">
-                  <span class="footer4-text19">Terms and Conditions</span>
-                </div>
-              </slot>
-            </span>
-            <span class="thq-body-small">
-              <slot name="cookiesLink">
-                <!--Default content for cookiesLink-->
-                <div class="footer4-fragment2">
-                  <span class="footer4-text15">Cookies Policy</span>
-                </div>
-              </slot>
-            </span>
-          </div>
+        
         </div>
       </div>
     </div>
