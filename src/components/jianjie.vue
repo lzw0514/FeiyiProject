@@ -63,7 +63,7 @@
     methods: {
       fetchProfile() {
         axios
-          .get(`http://localhost:8081/user/info`, {
+          .get(`/user/info`, {
             params: { userId: this.userId }
           })
           .then((res) => {
@@ -75,7 +75,7 @@
       },
       submit() {
         axios
-          .post(`http://localhost:8081/user/update`, {
+          .post(`/user/update`, {
             userId: this.userId,
             ...this.form
           })

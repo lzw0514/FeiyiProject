@@ -70,7 +70,7 @@
     },
     methods: {
       fetchFavorites() {
-        axios.get('http://localhost:8081/user/favorite/list', {
+        axios.get('/user/favorite/list', {
           params: {
             userId: this.userId,
             page: this.page,

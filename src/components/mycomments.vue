@@ -70,7 +70,7 @@
     },
     methods: {
       fetchComments() {
-        axios.get('http://localhost:8081/user/comment/list', {
+        axios.get('/user/comment/list', {
           params: {
             userId: this.userId,
             page: this.page,

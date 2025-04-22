@@ -115,7 +115,7 @@ export default {
     },
     async loadQuestions () {
       try {
-        const res = await axios.get('http://localhost:8081/questions/random')
+        const res = await axios.get('/questions/random')
         if (res.data.code === 1) {
           this.questions = res.data.data
           this.userAnswers = {}
@@ -141,7 +141,7 @@ export default {
       }))
 
       try {
-        const res = await axios.post('http://localhost:8081/questions/submit', payload)
+        const res = await axios.post('/questions/submit', payload)
         if (res.data.code === 1) {
           this.results = res.data.data
           this.questions.forEach(q => {

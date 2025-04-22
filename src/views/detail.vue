@@ -132,7 +132,7 @@ export default {
   methods: {
     // 获取非遗项目详情
     fetchHeritageDetail(id) {
-      axios.get(`http://localhost:8081/heritage/details/${id}`)
+      axios.get(`/heritage/details/${id}`)
         .then(response => {
           this.heritage = response.data.data;
         })
@@ -155,7 +155,7 @@ export default {
           const userId = decoded.claims.id;
           
           // 发送请求检查该用户是否收藏了该非遗项目
-          axios.get('http://localhost:8081/user/favorite/status', {
+          axios.get('/user/favorite/status', {
           params: { userId, heritageId: id },
           headers: {
               'Authorization': `Bearer ${localStorage.getItem('token')}` // 将 token 加入请求头
@@ -196,7 +196,7 @@ export default {
 
           if (this.isFavorite) {
             // 取消收藏
-            axios.delete('http://localhost:8081/user/favorite/remove', {
+            axios.delete('/user/favorite/remove', {
               params: {
                 userId,
                 heritageId
@@ -218,7 +218,7 @@ export default {
             });
           } else {
             // 添加收藏
-          axios.post('http://localhost:8081/user/favorite/add', {
+          axios.post('/user/favorite/add', {
               userId,
               userName,
               heritageId
@@ -248,7 +248,7 @@ export default {
         // 获取评论列表
     fetchComments() {
       const id = Number(this.$route.params.id);
-      axios.get(`http://localhost:8081/comment/getAll/heritageId/${id}`, {
+      axios.get(`/comment/getAll/heritageId/${id}`, {
         params: {
           page: 1,
           pageSize: 20
@@ -281,7 +281,7 @@ export default {
         const userName = decoded.claims.userName;
         const heritageId = Number(this.$route.params.id);
 
-        axios.post('http://localhost:8081/comment/add', {
+        axios.post('/comment/add', {
           userId,
           userName,
           heritageId,
@@ -306,7 +306,7 @@ export default {
     deleteComment(commentId) {
       if (!confirm('确定要删除这条评论吗？')) return;
 
-      axios.delete(`http://localhost:8081/comment/delete/${commentId}/${this.currentUserId}`)
+      axios.delete(`/comment/delete/${commentId}/${this.currentUserId}`)
         .then(res => {
           if (res.data.code === 1) {
             this.comments = this.comments.filter(c => c.id !== commentId);

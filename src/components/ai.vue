@@ -49,7 +49,7 @@
   
   const ask = async () => {
     try {
-      const res = await axios.get('http://localhost:8081/api/qwen/chat', {
+      const res = await axios.get('/api/qwen/chat', {
         params: { prompt: prompt.value }
       })
       htmlResponse.value = formatTextToHtml(res.data)

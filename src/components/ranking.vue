@@ -264,7 +264,7 @@ table td {
     },
     methods: {
       fetchRanking() {
-        axios.get('http://localhost:8081/user/top10', {
+        axios.get('/user/top10', {
           params: { userId: this.userId },
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`
