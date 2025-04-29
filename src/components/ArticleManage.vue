@@ -73,7 +73,7 @@
     name: 'HeritageTable',
     data() {
       return {
-        filterCategory: '',
+        filterCategory: this.$route.query.category || '',
         filterRegion: '',
         categoryOptions: ['民间文学', '传统音乐', '传统舞蹈', '传统戏剧','曲艺','传统体育、游艺与杂技','传统美术','传统技艺','传统医药','民俗'],
         regionOptions: [
@@ -126,6 +126,11 @@
       }
     },
     created() {
+      const categoryFromRoute = this.$route.query.category;
+
+      if (categoryFromRoute) {
+        this.filterCategory = categoryFromRoute;
+      }
       this.fetchHeritageList()
     }
   }

@@ -14,7 +14,6 @@ import AIPage from './views/ai-explore.vue'
 import Knowledge from './views/knowledge.vue'
 import MyProfile from './views/myhome.vue'
 import Rank from './views/rank.vue'
-
 Vue.use(Router)
 // Vue.use(Meta)
 

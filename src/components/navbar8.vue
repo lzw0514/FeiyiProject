@@ -14,6 +14,9 @@
                 <div><span>非遗百科</span></div>
               </slot>
             </a>
+            <a :href="'https://datav.igoodot.com/#/dw/qmjMncuV'" class="thq-body-small thq-link">
+                <div><span>非遗地图</span></div>
+            </a>
             <a :href="link3Url" target="_blank" rel="noreferrer noopener" class="navbar8-link31 thq-body-small thq-link">
               <slot name="link3">
                 <div><span>知识问答</span></div>

@@ -11,7 +11,7 @@
           <div class="user-menu">
             <div class="user-info">
               <img src="images/touxiang.png" alt="头像" class="avatar" />
-              <div class="user-name">Hello, {{ userName }}</div>
+              <div class="user-name">Hello{{ userName }}</div>
             </div>
             <!-- 分割线 -->
             <div class="divider"></div>
@@ -70,7 +70,7 @@ export default {
   },
   data() {
     return {
-      userName: "张三",
+      userName: "",
       activeMenu: "settings",  // 默认选中 "个人资料"
     };
   },

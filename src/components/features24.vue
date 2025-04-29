@@ -18,8 +18,10 @@
           <div class="features24-divider-container1">
             <div v-if="activeTab === 0" class="features24-container3"></div>
           </div>
-          <div class="features24-content1">
-            <h2 class="thq-heading-2">
+          <div class="features24-content1"  style="display: flex; flex-direction: column; gap: 8px;">
+            <!-- 新增一个 flex 容器包裹标题和按钮 -->
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h2 class="thq-heading-2" style="margin: 0;">
               <slot name="feature1Title">
                 <!--Default content for feature1Title-->
                 <div class="features24-fragment14">
@@ -27,6 +29,8 @@
                 </div>
               </slot>
             </h2>
+            <slot name="button1"></slot>
+            </div>
             <span class="thq-body-small">
               <slot name="feature1Description">
                 <!--Default content for feature1Description-->
@@ -44,8 +48,10 @@
           <div class="features24-divider-container2">
             <div v-if="activeTab === 1" class="features24-container4"></div>
           </div>
-          <div class="features24-content2">
-            <h2 class="thq-heading-2">
+          <div class="features24-content2"  style="display: flex; flex-direction: column; gap: 8px;">
+            <!-- 新增一个 flex 容器包裹标题和按钮 -->
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h2 class="thq-heading-2" style="margin: 0;">
               <slot name="feature2Title">
                 <!--Default content for feature2Title-->
                 <div class="features24-fragment17">
@@ -53,6 +59,8 @@
                 </div>
               </slot>
             </h2>
+            <slot name="button2"></slot>
+            </div>
             <span class="thq-body-small">
               <slot name="feature2Description">
                 <!--Default content for feature2Description-->
@@ -70,8 +78,10 @@
           <div class="features24-divider-container3">
             <div v-if="activeTab === 2" class="features24-container5"></div>
           </div>
-          <div class="features24-content3">
-            <h2 class="thq-heading-2">
+          <div class="features24-content3"  style="display: flex; flex-direction: column; gap: 8px;">
+            <!-- 新增一个 flex 容器包裹标题和按钮 -->
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h2 class="thq-heading-2" style="margin: 0;">
               <slot name="feature3Title">
                 <!--Default content for feature3Title-->
                 <div class="features24-fragment13">
@@ -79,6 +89,8 @@
                 </div>
               </slot>
             </h2>
+            <slot name="button3"></slot>
+              </div>
             <span class="thq-body-small">
               <slot name="feature3Description">
                 <!--Default content for feature3Description-->
@@ -96,8 +108,10 @@
           <div class="features24-divider-container4">
             <div v-if="activeTab === 3" class="features24-container6"></div>
           </div>
-          <div class="features24-content4">
-            <h2 class="thq-heading-2">
+          <div class="features24-content4"  style="display: flex; flex-direction: column; gap: 8px;">
+            <!-- 新增一个 flex 容器包裹标题和按钮 -->
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h2 class="thq-heading-2" style="margin: 0;">
               <slot name="feature3Title2">
                 <!--Default content for feature3Title2-->
                 <div class="features24-fragment16">
@@ -105,6 +119,8 @@
                 </div>
               </slot>
             </h2>
+            <slot name="button4"></slot>
+            </div>
             <span class="thq-body-small">
               <slot name="feature3Description2">
                 <!--Default content for feature3Description2-->
@@ -122,8 +138,10 @@
           <div class="features24-divider-container5">
             <div v-if="activeTab === 4" class="features24-container7"></div>
           </div>
-          <div class="features24-content5">
-            <h2 class="thq-heading-2">
+          <div class="features24-content5"  style="display: flex; flex-direction: column; gap: 8px;">
+            <!-- 新增一个 flex 容器包裹标题和按钮 -->
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h2 class="thq-heading-2" style="margin: 0;">
               <slot name="feature3Title1">
                 <!--Default content for feature3Title1-->
                 <div class="features24-fragment18">
@@ -131,6 +149,8 @@
                 </div>
               </slot>
             </h2>
+            <slot name="button5"></slot>
+            </div>
             <span class="thq-body-small">
               <slot name="feature3Description1">
                 <!--Default content for feature3Description1-->

@@ -6,8 +6,10 @@
           <div class="features25-divider-container1">
             <div v-if="activeTab === 0" class="features25-container3"></div>
           </div>
-          <div class="features25-content1">
-            <h2 class="thq-heading-2">
+          <div class="features25-content1"  style="display: flex; flex-direction: column; gap: 8px;">
+            <!-- 新增一个 flex 容器包裹标题和按钮 -->
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h2 class="thq-heading-2" style="margin: 0;">
               <slot name="feature1Title">
                 <!--Default content for feature1Title-->
                 <div class="features25-fragment11">
@@ -15,6 +17,8 @@
                 </div>
               </slot>
             </h2>
+            <slot name="button6"></slot>
+            </div>
             <span class="thq-body-small">
               <slot name="feature1Description">
                 <!--Default content for feature1Description-->
@@ -32,8 +36,10 @@
           <div class="features25-divider-container2">
             <div v-if="activeTab === 1" class="features25-container4"></div>
           </div>
-          <div class="features25-content2">
-            <h2 class="features25-feature2-title thq-heading-2">
+          <div class="features25-content2"  style="display: flex; flex-direction: column; gap: 8px;">
+            <!-- 新增一个 flex 容器包裹标题和按钮 -->
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h2 class="features25-feature2-title thq-heading-2" style="margin: 0;">
               <slot name="feature2Title">
                 <!--Default content for feature2Title-->
                 <div class="features25-fragment13">
@@ -44,6 +50,8 @@
                 </div>
               </slot>
             </h2>
+            <slot name="button7"></slot>
+            </div>
             <span class="thq-body-small">
               <slot name="feature2Description">
                 <!--Default content for feature2Description-->
@@ -61,8 +69,10 @@
           <div class="features25-divider-container3">
             <div v-if="activeTab === 2" class="features25-container5"></div>
           </div>
-          <div class="features25-content3">
-            <h2 class="thq-heading-2">
+          <div class="features25-content3" style="display: flex; flex-direction: column; gap: 8px;">
+            <!-- 新增一个 flex 容器包裹标题和按钮 -->
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h2 class="thq-heading-2" style="margin: 0;">
               <slot name="feature3Title">
                 <!--Default content for feature3Title-->
                 <div class="features25-fragment12">
@@ -70,6 +80,8 @@
                 </div>
               </slot>
             </h2>
+            <slot name="button8"></slot>
+            </div>
             <span class="thq-body-small">
               <slot name="feature3Description">
                 <!--Default content for feature3Description-->
@@ -87,34 +99,42 @@
           <div class="features25-divider-container4">
             <div v-if="activeTab === 3" class="features25-container6"></div>
           </div>
-          <div class="features25-content4">
-            <h2 class="thq-heading-2">
-              <slot name="feature3Title2">
-                <!--Default content for feature3Title2-->
-                <div class="features25-fragment14">
-                  <span class="features25-text16">传统医药</span>
-                </div>
-              </slot>
-            </h2>
+          <div class="features25-content4" style="display: flex; flex-direction: column; gap: 8px;">
+            <!-- 新增一个 flex 容器包裹标题和按钮 -->
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <h2 class="thq-heading-2" style="margin: 0;">
+                <slot name="feature3Title2">
+                  <!--Default content for feature3Title2-->
+                  <div class="features25-fragment14">
+                    <span class="features25-text16">传统医药</span>
+                  </div>
+                </slot>
+              </h2>
+              <slot name="button9"></slot>
+            </div>
+
             <span class="thq-body-small">
-              <slot name="feature3Description2">
-                <!--Default content for feature3Description2-->
-                <div class="features25-fragment10">
-                  <span class="features25-text10">
-                    Explore the initiatives and projects aimed at preserving and
-                    promoting China&apos;s intangible cultural heritage.
-                  </span>
-                </div>
-              </slot>
-            </span>
+      <slot name="feature3Description2">
+        <!--Default content for feature3Description2-->
+        <div class="features25-fragment10">
+          <span class="features25-text10">
+            Explore the initiatives and projects aimed at preserving and
+            promoting China&apos;s intangible cultural heritage.
+          </span>
+        </div>
+      </slot>
+    </span>
           </div>
         </div>
+
         <div @click="activeTab = 4" class="features25-tab-horizontal5">
           <div class="features25-divider-container5">
             <div v-if="activeTab === 4" class="features25-container7"></div>
           </div>
-          <div class="features25-content5">
-            <h2 class="thq-heading-2">
+          <div class="features25-content5" style="display: flex; flex-direction: column; gap: 8px;">
+            <!-- 新增一个 flex 容器包裹标题和按钮 -->
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h2 class="thq-heading-2" style="margin: 0;">
               <slot name="feature3Title1">
                 <!--Default content for feature3Title1-->
                 <div class="features25-fragment15">
@@ -122,6 +142,8 @@
                 </div>
               </slot>
             </h2>
+            <slot name="button10"></slot>
+            </div>
             <span class="thq-body-small">
               <slot name="feature3Description1">
                 <!--Default content for feature3Description1-->

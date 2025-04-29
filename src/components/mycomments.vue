@@ -56,7 +56,7 @@
       const token = localStorage.getItem('token');
       if (!token) {
         alert('请先登录');
-        this.$router.push('/login');
+        this.$router.push('/Page1');
         return;
       }
   

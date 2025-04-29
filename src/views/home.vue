@@ -48,15 +48,28 @@
           <span class="home-text33">民间文学</span>
         </div>
       </template>
+      <template v-slot:button1>
+        <!-- 使用 ViewMoreButton 组件并传递 category -->
+        <ViewMoreButton :category="'民间文学'" />
+      </template>
       <template v-slot:feature2Title>
         <div class="home-fragment34">
           <span class="home-text34">民间音乐</span>
         </div>
       </template>
+
+      <template v-slot:button2>
+        <!-- 使用 ViewMoreButton 组件并传递 category -->
+        <ViewMoreButton :category="'传统音乐'" />
+      </template>
       <template v-slot:feature3Title>
         <div class="home-fragment35">
           <span class="home-text35">民间舞蹈</span>
         </div>
+      </template>
+      <template v-slot:button3>
+        <!-- 使用 ViewMoreButton 组件并传递 category -->
+        <ViewMoreButton :category="'传统舞蹈'" />
       </template>
       <template v-slot:feature3Title1>
         <div class="home-fragment36"><span class="home-text36">曲艺</span></div>
@@ -66,45 +79,49 @@
           <span class="home-text37">传统戏剧</span>
         </div>
       </template>
+      <template v-slot:button4>
+        <!-- 使用 ViewMoreButton 组件并传递 category -->
+        <ViewMoreButton :category="'传统戏剧'" />
+      </template>
       <template v-slot:feature1Description>
         <div class="home-fragment38">
           <span class="home-text38">
-            Explore the colorful costumes and captivating performances of
-            traditional Chinese opera.
+            民间文学是人民群众世代相传的口头传统，包括神话、传说、史诗、歌谣等，承载着中华民族的文化记忆和集体智慧，是民族文化基因的重要载体。
           </span>
         </div>
       </template>
+
       <template v-slot:feature2Description>
         <div class="home-fragment39">
           <span class="home-text39">
-            Discover the vibrant world of Chinese traditional music and its
-            regional variations.
+            民间音乐源于劳动生活，以独特的旋律、节奏和演唱形式展现地域风情，如劳动号子、山歌、小调等，是中华民族情感表达的艺术结晶。
           </span>
         </div>
       </template>
       <template v-slot:feature3Description>
         <div class="home-fragment40">
           <span class="home-text40">
-            Learn about the intricate art of Chinese calligraphy and its
-            historical significance.
+           民间舞蹈与生产劳动、岁时节令、信仰仪式密切相关，以丰富的肢体语言和服饰道具，生动展现各民族的生活习俗与精神追求。
           </span>
         </div>
       </template>
       <template v-slot:feature3Description1>
         <div class="home-fragment41">
           <span class="home-text41">
-            Learn about the intricate art of Chinese calligraphy and its
-            historical significance.
+           传统戏剧融合唱、念、做、打等表演形式，以程式化的艺术语言演绎历史故事与世俗百态，体现了中国戏曲的独特美学体系。
           </span>
         </div>
       </template>
       <template v-slot:feature3Description2>
         <div class="home-fragment42">
           <span class="home-text42">
-            Learn about the intricate art of Chinese calligraphy and its
-            historical significance.
+            曲艺是以说唱为主的叙事表演艺术，形式多样，如评书、鼓书、弹词等，凭借语言魅力和音乐节奏，传承民间智慧与道德教化。
           </span>
         </div>
+      </template>
+      <template v-slot:button5>
+        <!-- 使用 ViewMoreButton 组件并传递 category -->
+        <ViewMoreButton :category="'曲艺'" />
       </template>
     </app-features24>
     <app-features25>
@@ -112,6 +129,10 @@
         <div class="home-fragment43">
           <span class="home-text43">杂技与竞技</span>
         </div>
+      </template>
+      <template v-slot:button6>
+        <!-- 使用 ViewMoreButton 组件并传递 category -->
+        <ViewMoreButton :category="'传统体育、游艺与杂技'" />
       </template>
       <template v-slot:feature2Title>
         <div class="home-fragment44">
@@ -121,11 +142,21 @@
           </span>
         </div>
       </template>
+      <template v-slot:button7>
+        <!-- 使用 ViewMoreButton 组件并传递 category -->
+        <ViewMoreButton :category="'传统美术'" />
+      </template>
       <template v-slot:feature3Title>
         <div class="home-fragment45">
           <span class="home-text47">传统手工技艺</span>
         </div>
       </template>
+      <template v-slot:button8>
+        <!-- 使用 ViewMoreButton 组件并传递 category -->
+        <ViewMoreButton :category="'传统技艺'" />
+      </template>
+
+
       <template v-slot:feature3Title1>
         <div class="home-fragment46"><span class="home-text48">民俗</span></div>
       </template>
@@ -134,45 +165,50 @@
           <span class="home-text49">传统医药</span>
         </div>
       </template>
+
+      <template v-slot:button9>
+        <!-- 使用 ViewMoreButton 组件并传递 category -->
+        <ViewMoreButton :category="'传统医药'" />
+      </template>
       <template v-slot:feature1Description>
         <div class="home-fragment48">
           <span class="home-text50">
-            Learn about the rich history and significance of China&apos;s
-            intangible cultural heritage.
+            杂技与竞技以高超的身体技巧和器械操演为核心，兼具惊险性、观赏性和竞技性，展现了中华民族的勇敢精神与艺术创造力。
           </span>
         </div>
       </template>
+
       <template v-slot:feature2Description>
         <div class="home-fragment49">
           <span class="home-text51">
-            Discover the dedicated individuals who are carrying on the traditions
-            of China&apos;s intangible cultural heritage.
+           民间美术通过绘画、雕塑、剪刻等视觉形式，表现吉祥寓意和审美情趣，如年画、剪纸、泥塑等，是乡土文化的重要表现形式。
           </span>
         </div>
       </template>
       <template v-slot:feature3Description>
         <div class="home-fragment50">
           <span class="home-text52">
-            Explore the initiatives and projects aimed at preserving and promoting
-            China&apos;s intangible cultural heritage.
+          传统手工技艺以手工劳动和天然材料为基础，如陶瓷、织染、锻造等，凝结世代匠人的智慧，体现了人与自然和谐共生的工艺哲学。
           </span>
         </div>
       </template>
       <template v-slot:feature3Description1>
         <div class="home-fragment51">
           <span class="home-text53">
-            Explore the initiatives and projects aimed at preserving and promoting
-            China&apos;s intangible cultural heritage.
+          传统医药以整体观和辨证论治为核心，包括针灸、推拿、方剂等，是中华民族数千年来防病治病的经验总结，具有独特的理论体系和临床价值。
           </span>
         </div>
       </template>
       <template v-slot:feature3Description2>
         <div class="home-fragment52">
           <span class="home-text54">
-            Explore the initiatives and projects aimed at preserving and promoting
-            China&apos;s intangible cultural heritage.
+        民俗是民众在长期生活中形成的风尚习俗，涵盖节庆、礼仪、信仰等，维系着社区认同与文化传承，是民族文化多样性的生动体现。
           </span>
         </div>
+      </template>
+      <template v-slot:button10>
+        <!-- 使用 ViewMoreButton 组件并传递 category -->
+        <ViewMoreButton :category="'民俗'" />
       </template>
     </app-features25>
     <app-footer4>
@@ -217,6 +253,7 @@ import AppCta26 from '../components/cta26'
 import AppFeatures24 from '../components/features24'
 import AppFeatures25 from '../components/features25'
 import AppFooter4 from '../components/footer4'
+import ViewMoreButton from '../components/ViewMoreButton.vue';
 
 export default {
   name: 'Home',
@@ -228,6 +265,7 @@ export default {
     AppFeatures24,
     AppFeatures25,
     AppFooter4,
+    ViewMoreButton,
   },
   metaInfo: {
     title: 'Spry Adorable Lyrebird',
