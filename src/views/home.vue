@@ -137,8 +137,7 @@
       <template v-slot:feature2Title>
         <div class="home-fragment44">
           <span class="home-text44">
-            <span>民间</span>
-            <span class="home-text46">美术</span>
+            <span class="home-text46">民间美术</span>
           </span>
         </div>
       </template>
@@ -479,7 +478,10 @@ export default {
 }
  
 .home-text33 {
-  display: inline-block;
+  color: #5b3921;
+  font-weight: bold;
+  font-family: "Noto Serif SC", serif;
+  display: inline-block;  display: inline-block;
 }
  
 .home-fragment34 {
@@ -487,6 +489,10 @@ export default {
 }
  
 .home-text34 {
+  color: #5b3921;
+  font-weight: bold;
+  font-family: "Noto Serif SC", serif;
+  display: inline-block;
   display: inline-block;
 }
  
@@ -495,6 +501,10 @@ export default {
 }
  
 .home-text35 {
+  color: #5b3921;
+  font-weight: bold;
+  font-family: "Noto Serif SC", serif;
+  display: inline-block;
   display: inline-block;
 }
  
@@ -503,6 +513,9 @@ export default {
 }
  
 .home-text36 {
+  color: #5b3921;
+  font-weight: bold;
+  font-family: "Noto Serif SC", serif;
   display: inline-block;
 }
  
@@ -511,6 +524,9 @@ export default {
 }
  
 .home-text37 {
+  color: #5b3921;
+  font-weight: bold;
+  font-family: "Noto Serif SC", serif;
   display: inline-block;
 }
  
@@ -519,6 +535,7 @@ export default {
 }
  
 .home-text38 {
+
   display: inline-block;
 }
  
@@ -559,6 +576,9 @@ export default {
 }
  
 .home-text43 {
+  color: #5b3921;
+  font-weight: bold;
+  font-family: "Noto Serif SC", serif;
   display: inline-block;
 }
  
@@ -571,7 +591,11 @@ export default {
 }
  
 .home-text46 {
-  color: var(--dl-color-theme-neutral-dark);
+  color: #5b3921;
+  font-weight: bold;
+  font-family: "Noto Serif SC", serif;
+  display: inline-block;
+
 }
  
 .home-fragment45 {
@@ -579,6 +603,9 @@ export default {
 }
  
 .home-text47 {
+  color: #5b3921;
+  font-weight: bold;
+  font-family: "Noto Serif SC", serif;
   display: inline-block;
 }
  
@@ -587,6 +614,9 @@ export default {
 }
  
 .home-text48 {
+  color: #5b3921;
+  font-weight: bold;
+  font-family: "Noto Serif SC", serif;
   display: inline-block;
 }
  
@@ -595,6 +625,9 @@ export default {
 }
  
 .home-text49 {
+  color: #5b3921;
+  font-weight: bold;
+  font-family: "Noto Serif SC", serif;
   display: inline-block;
 }
  
@@ -603,6 +636,7 @@ export default {
 }
  
 .home-text50 {
+
   display: inline-block;
 }
  

@@ -336,6 +336,8 @@ export default {
 
 <style scoped>
 .hero17-header78 {
+  background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.3)),
+  url('/images/beijing4.jpg');
   gap: var(--dl-layout-space-threeunits);
   width: 100%;
   height: auto;

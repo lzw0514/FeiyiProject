@@ -125,6 +125,7 @@
   
   <style scoped>
   .navbar8-container1 {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     top: 0;
     width: 100%;
     display: flex;

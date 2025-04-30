@@ -544,6 +544,7 @@ export default {
 }
 
 .features24-text18 {
+
   display: inline-block;
 }
 
