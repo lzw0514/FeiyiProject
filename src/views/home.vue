@@ -194,14 +194,15 @@
       <template v-slot:feature3Description1>
         <div class="home-fragment51">
           <span class="home-text53">
-          传统医药以整体观和辨证论治为核心，包括针灸、推拿、方剂等，是中华民族数千年来防病治病的经验总结，具有独特的理论体系和临床价值。
+
+             民俗是民众在长期生活中形成的风尚习俗，涵盖节庆、礼仪、信仰等，维系着社区认同与文化传承，是民族文化多样性的生动体现。
           </span>
         </div>
       </template>
       <template v-slot:feature3Description2>
         <div class="home-fragment52">
           <span class="home-text54">
-        民俗是民众在长期生活中形成的风尚习俗，涵盖节庆、礼仪、信仰等，维系着社区认同与文化传承，是民族文化多样性的生动体现。
+        传统医药以整体观和辨证论治为核心，包括针灸、推拿、方剂等，是中华民族数千年来防病治病的经验总结，具有独特的理论体系和临床价值。
           </span>
         </div>
       </template>
