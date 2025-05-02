@@ -7,41 +7,12 @@
     <app-hero17
       image1Src= '/images/feiyi14.jpg'
     >
-     
-      <template v-slot:content1>
-        <div class="home-fragment28">
-          <span class="home-text28">
-            Explore the rich tapestry of China&apos;s intangible cultural
-            heritage, from traditional crafts to performing arts, passed down
-            through generations.
-          </span>
-        </div>
-      </template>
-      <template v-slot:heading1>
-        <div class="home-fragment29">
-          <span class="home-text29">「匠心铸就千年韵，非遗焕发新生光」</span>
-        </div>
-      </template>
     </app-hero17>
+
     <app-cta26>
-      <template v-slot:action1>
-        <div class="home-fragment30">
-          <span class="home-text30">了解更多</span>
-        </div>
-      </template>
-      <template v-slot:content1>
-        <div class="home-fragment31">
-          <span class="home-text31">
-            走进中国非物质文化遗产，探寻千年技艺，感受文化之韵，传承匠心之美，让传统在现代焕发新的光彩
-          </span>
-        </div>
-      </template>
-      <template v-slot:heading1>
-        <div class="home-fragment32">
-          <span class="home-text32">走进中国非物质文化遗产</span>
-        </div>
-      </template>
     </app-cta26>
+    <heritage-list>
+    </heritage-list>
     <app-features24>
       <template v-slot:feature1Title>
         <div class="home-fragment33">
@@ -254,6 +225,7 @@ import AppFeatures24 from '../components/features24'
 import AppFeatures25 from '../components/features25'
 import AppFooter4 from '../components/footer4'
 import ViewMoreButton from '../components/ViewMoreButton.vue';
+import HeritageList  from "../components/heritage-list.vue";
 
 export default {
   name: 'Home',
@@ -266,6 +238,7 @@ export default {
     AppFeatures25,
     AppFooter4,
     ViewMoreButton,
+    HeritageList,
   },
   metaInfo: {
     title: 'Spry Adorable Lyrebird',
@@ -287,7 +260,32 @@ export default {
   align-items: center;
   flex-direction: column;
 }
- 
+.heritage-box {
+  margin-top: 12px;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f0f8ff;
+  text-align: center;
+}
+
+.heritage-box p {
+  margin: 0 0 10px;
+  color: #333;
+  font-size: 14px;
+}
+
+.heritage-link {
+  display: inline-block;
+  color: #0078d4;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.heritage-link:hover {
+  text-decoration: underline;
+}
+
 .home-fragment10 {
   display: contents;
 }

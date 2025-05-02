@@ -2,7 +2,7 @@
   <div class="page-container">
     <app-navbar8 >
     </app-navbar8>
-    <ArticleManage>shishi</ArticleManage>
+    <ArticleManage></ArticleManage>
     <app-footer4>
     </app-footer4>
   </div>

@@ -93,6 +93,10 @@
         type: String,
         default: 'image',
       },
+      link6Url: {
+        type: String,
+        default: '/heritage-list',
+      },
     
     },
     computed: {

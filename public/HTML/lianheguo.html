@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>文化遗产年份展示</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            font-family: 'Noto Serif SC', 'Microsoft YaHei', serif;
+            background: linear-gradient(to bottom, #f5f7fa, #fffdf8);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #fffdf8;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+            padding: 30px 40px;
+            width: 100%;
+            max-width: 1000px;
+            border: 2px solid #3a5166;
+        }
+
+        .chart-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        .bar-group {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0px;
+            width: 100%;
+        }
+
+        .bar-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80px;
+        }
+
+        .bar {
+            width: 80px;
+            border-radius: 3px 3px 0 0;
+            transition: all 0.3s;
+            margin: 0;
+        }
+
+        /* 条形图高度调整 */
+        .bar1 { height: 170px; background-color: #c09d7b; }
+        .bar2 { height: 150px; background-color: #a9855d; }
+        .bar3 { height: 180px; background-color: #5e6b52; }
+        .bar4 { height: 130px; background-color: #3e4f5c; }
+        .bar5 { height: 140px; background-color: #32414b; }
+        .bar6 { height: 110px; background-color: #bfa074; }
+        .bar7 { height: 160px; background-color: #a9855d; }
+        .bar8 { height: 170px; background-color: #708090; }
+        .bar9 { height: 140px; background-color: #5e6b52; }
+        .bar10 { height: 160px; background-color: #c09d7b; }
+        .bar11 { height: 150px; background-color: #3e4f5c; }
+        .bar12 { height: 120px; background-color: #32414b; }
+        .bar13 { height: 150px; background-color: #a9855d; }
+
+        .bar-decoration {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 5px;
+        }
+
+        .bar-line {
+            width: 1px;
+            height: 20px;
+            background-color: currentColor;
+        }
+
+        .bar-symbol {
+            font-size: 16px;
+            margin-top: 5px;
+            color: currentColor;
+        }
+
+
+        .year-button {
+            margin-top: 10px;
+            padding: 6px 12px;
+            border: none;
+            background-color: transparent;
+            color: #b13e06;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 10;
+            border-radius: 4px;
+        }
+
+        .year-button:hover {
+            color: #fff;
+            background-color: #b13e06;
+            transform: translateY(-2px);
+        }
+
+        .year-button.active {
+            color: #fff;
+            background-color: #b13e06;
+            box-shadow: 0 2px 8px rgba(177, 62, 6, 0.3);
+        }
+        .year-button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+        .year-content {
+            display: none;
+            border-top: 1px dashed #b12a1b;
+            padding-top: 20px;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #333;
+            text-align: justify;
+        }
+
+        .year-content.active {
+            display: block;
+        }
+
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 1000px;
+            }
+            .bar-container {
+                width: 80px;
+            }
+            .bar {
+                width: 80px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .container {
+                max-width: 800px;
+            }
+            .bar-container {
+                width: 70px;
+            }
+            .bar {
+                width: 70px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                max-width: 600px;
+            }
+            .bar-group {
+                flex-wrap: wrap;
+                justify-content: flex-start;
+            }
+            .bar-container {
+                width: 60px;
+                margin-bottom: 20px;
+            }
+            .bar {
+                width: 60px;
+            }
+            .bar-year {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                max-width: 100%;
+            }
+            .bar-container {
+                width: 50px;
+            }
+            .bar {
+                width: 50px;
+            }
+        }
+        /* 图片容器样式 */
+        .image-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            /* 隐藏滚动条 */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* 隐藏 Chrome、Safari 和 Opera 的滚动条 */
+        .image-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* 单个图片项样式 */
+        .image-item {
+            flex: 0 0 auto;
+            width: 200px;
+        }
+
+        /* 图片样式 */
+        .image-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        /* 图片标题样式 */
+        .image-caption {
+            text-align: center;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="chart-container">
+        <div class="bar-group">
+            <div class="bar bar11"></div>
+            <div class="bar-container">
+                <div class="bar bar1" style="color: #c09d7b;"></div>
+                <div class="bar-decoration" style="color: #c09d7b;">
+                    <div class="bar-line" style="height: 70px;"></div>
+                    <div class="bar-symbol">★</div>
+                </div>
+                <button class="year-button" data-year="2008">2008</button>
+            </div>
+            <div class="bar-container">
+                <div class="bar bar2" style="color: #a9855d;"></div>
+                <div class="bar-decoration" style="color: #a9855d;">
+                    <div class="bar-line" style="height: 90px;"></div>
+                    <div class="bar-symbol">★</div>
+                </div>
+                <button class="year-button" data-year="2009">2009</button>
+            </div>
+            <div class="bar-container">
+                <div class="bar bar3" style="color: #5e6b52;"></div>
+                <div class="bar-decoration" style="color: #5e6b52;">
+                    <div class="bar-line" style="height: 60px;"></div>
+                    <div class="bar-symbol">★</div>
+                </div>
+                <button class="year-button" data-year="2010">2010</button>
+            </div>
+            <div class="bar-container">
+                <div class="bar bar4" style="color: #3e4f5c;"></div>
+                <div class="bar-decoration" style="color: #3e4f5c;">
+                    <div class="bar-line" style="height: 110px;"></div>
+                    <div class="bar-symbol">★</div>
+                </div>
+                <button class="year-button" data-year="2011">2011</button>
+            </div>
+            <div class="bar-container">
+                <div class="bar bar5" style="color: #32414b;"></div>
+                <div class="bar-decoration" style="color: #32414b;">
+                    <div class="bar-line" style="height: 100px;"></div>
+                    <div class="bar-symbol">★</div>
+                </div>
+                <button class="year-button" data-year="2012">2012</button>
+            </div>
+            <div class="bar-container">
+                <div class="bar bar6" style="color: #bfa074;"></div>
+                <div class="bar-decoration" style="color: #bfa074;">
+                    <div class="bar-line" style="height: 130px;"></div>
+                    <div class="bar-symbol">★</div>
+                </div>
+                <button class="year-button" data-year="2013">2013</button>
+            </div>
+            <div class="bar-container">
+                <div class="bar bar7" style="color: #a9855d;"></div>
+                <div class="bar-decoration" style="color: #a9855d;">
+                    <div class="bar-line" style="height: 80px;"></div>
+                    <div class="bar-symbol">★</div>
+                </div>
+                <button class="year-button" data-year="2016">2016</button>
+            </div>
+            <div class="bar-container">
+                <div class="bar bar8" style="color: #708090;"></div>
+                <div class="bar-decoration" style="color: #708090;">
+                    <div class="bar-line" style="height: 70px;"></div>
+                    <div class="bar-symbol">★</div>
+                </div>
+                <button class="year-button" data-year="2018">2018</button>
+            </div>
+            <div class="bar-container">
+                <div class="bar bar9" style="color: #5e6b52;"></div>
+                <div class="bar-decoration" style="color: #5e6b52;">
+                    <div class="bar-line" style="height: 100px;"></div>
+                    <div class="bar-symbol">★</div>
+                </div>
+                <button class="year-button" data-year="2020">2020</button>
+            </div>
+            <div class="bar-container">
+                <div class="bar bar10" style="color: #c09d7b;"></div>
+                <div class="bar-decoration" style="color: #c09d7b;">
+                    <div class="bar-line" style="height: 80px;"></div>
+                    <div class="bar-symbol">★</div>
+                </div>
+                <button class="year-button" data-year="2022">2022</button>
+            </div>
+            <div class="bar-container">
+                <div class="bar bar13" style="color: #a9855d;"></div>
+                <div class="bar-decoration" style="color: #a9855d;">
+                    <div class="bar-line" style="height: 90px;"></div>
+                    <div class="bar-symbol">★</div>
+                </div>
+                <button class="year-button" data-year="2024">2024</button>
+            </div>
+            <div class="bar bar12"></div>
+        </div>
+    </div>
+
+
+
+    <div id="contentArea">
+        <div class="year-content" id="content-2008">
+            <div class="image-container">
+                <div class="image-item">
+                    <img src="/images/2008.png" alt="2008">
+                    <div class="image-caption">2008</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/20081.png" alt="昆曲">
+                    <div class="image-caption">昆曲</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/20082.png" alt="古琴艺术">
+                    <div class="image-caption">古琴艺术</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/20083.png" alt="新疆维吾尔木卡姆艺术">
+                    <div class="image-caption">新疆维吾尔木卡姆艺术</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/20084.png" alt="蒙古族长调民歌">
+                    <div class="image-caption">蒙古族长调民歌</div>
+                </div>
+            </div>
+        </div>
+        <div class="year-content" id="content-2009">
+            <div class="image-container">
+                <div class="image-item">
+                    <img src="/images/2009.png" alt="2009">
+                    <div class="image-caption">2009</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2009_中国篆刻.png" alt="中国篆刻">
+                    <div class="image-caption">中国篆刻</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2009_中国雕版印刷技艺.png" alt="中国雕版印刷技艺">
+                    <div class="image-caption">中国雕版印刷技艺</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2009_中国书法.png" alt="中国书法">
+                    <div class="image-caption">中国书法</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2009_中国剪纸.png" alt="中国剪纸">
+                    <div class="image-caption">中国剪纸</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2009_中国传统木结构营造技艺.png" alt="中国传统木结构营造技艺">
+                    <div class="image-caption">中国传统木结构营造技艺</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2009_南京云锦织造技艺.png" alt="南京云锦织造技艺">
+                    <div class="image-caption">南京云锦织造技艺</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2009_端午节.png" alt="端午节">
+                    <div class="image-caption">端午节</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2009_中国朝鲜族农乐舞.png" alt="中国朝鲜族农乐舞">
+                    <div class="image-caption">中国朝鲜族农乐舞</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2009_格萨（斯）尔.png" alt="格萨（斯）尔">
+                    <div class="image-caption">格萨（斯）尔</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2009_侗族大歌.png" alt="侗族大歌">
+                    <div class="image-caption">侗族大歌</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2009_花儿.png" alt="花儿">
+                    <div class="image-caption">花儿</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2009_玛纳斯.png" alt="玛纳斯">
+                    <div class="image-caption">玛纳斯</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2009_妈祖信俗.png" alt="妈祖信俗">
+                    <div class="image-caption">妈祖信俗</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2009_呼麦.png" alt="呼麦">
+                    <div class="image-caption">呼麦</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2009_南音.png" alt="南音">
+                    <div class="image-caption">南音</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2009_热贡艺术.png" alt="热贡艺术">
+                    <div class="image-caption">热贡艺术</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2009_中国蚕桑丝织技艺.png" alt="中国蚕桑丝织技艺">
+                    <div class="image-caption">中国蚕桑丝织技艺</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2009_藏戏.png" alt="藏戏">
+                    <div class="image-caption">藏戏</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2009_龙泉青瓷传统烧制技艺.png" alt="龙泉青瓷传统烧制技艺">
+                    <div class="image-caption">龙泉青瓷传统烧制技艺</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2009_宣纸传统制作技艺.png" alt="宣纸传统制作技艺">
+                    <div class="image-caption">宣纸传统制作技艺</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2009_西安鼓乐.png" alt="西安鼓乐">
+                    <div class="image-caption">西安鼓乐</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2009_粤剧.png" alt="粤剧">
+                    <div class="image-caption">粤剧</div>
+                </div>
+            </div>
+        </div>
+        <div class="year-content" id="content-2010">
+            <div class="image-container">
+                <div class="image-item">
+                    <img src="/images/2010.png" alt="2010">
+                    <div class="image-caption">2010</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2010_中医针灸.png" alt="中医针灸">
+                    <div class="image-caption">中医针灸</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2010_京剧.png" alt="京剧">
+                    <div class="image-caption">京剧</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2010_麦西热甫.png" alt="麦西热甫">
+                    <div class="image-caption">麦西热甫</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2010_中国水密隔舱福船制造技艺.png" alt="中国水密隔舱福船制造技艺">
+                    <div class="image-caption">中国水密隔舱福船制造技艺</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2010_中国活字印刷术.png" alt="中国活字印刷术">
+                    <div class="image-caption">中国活字印刷术</div>
+                </div>
+            </div>
+        </div>
+        <div class="year-content" id="content-2011">
+            <div class="image-container">
+                <div class="image-item">
+                    <img src="/images/2011.png" alt="2011">
+                    <div class="image-caption">2011</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2011_中国皮影戏.png" alt="中国皮影戏">
+                    <div class="image-caption">中国皮影戏</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2011_赫哲族伊玛堪.png" alt="赫哲族伊玛堪">
+                    <div class="image-caption">赫哲族伊玛堪</div>
+                </div>
+            </div>
+        </div>
+        <div class="year-content" id="content-2012">
+            <div class="image-container">
+                <div class="image-item">
+                    <img src="/images/2012.png" alt="2012">
+                    <div class="image-caption">2012</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2012_福建木偶戏.png" alt="福建木偶戏">
+                    <div class="image-caption">福建木偶戏</div>
+                </div>
+            </div>
+        </div>
+        <div class="year-content" id="content-2013">
+            <div class="image-container">
+                <div class="image-item">
+                    <img src="/images/2013.png" alt="2013">
+                    <div class="image-caption">2013</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2013_中国珠算.png" alt="中国珠算">
+                    <div class="image-caption">中国珠算</div>
+                </div>
+            </div>
+        </div>
+        <div class="year-content" id="content-2016">
+            <div class="image-container">
+                <div class="image-item">
+                    <img src="/images/2016.png" alt="2016">
+                    <div class="image-caption">2016</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2016_二十四节气.png" alt="二十四节气">
+                    <div class="image-caption">二十四节气</div>
+                </div>
+            </div>
+        </div>
+        <div class="year-content" id="content-2018">
+            <div class="image-container">
+                <div class="image-item">
+                    <img src="/images/2018.png" alt="2018">
+                    <div class="image-caption">2018</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2018_藏医药浴法.png" alt="藏医药浴法">
+                    <div class="image-caption">藏医药浴法</div>
+                </div>
+            </div>
+        </div>
+        <div class="year-content" id="content-2020">
+            <div class="image-container">
+                <div class="image-item">
+                    <img src="/images/2020.png" alt="2020">
+                    <div class="image-caption">2020</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2020_太极拳.png" alt="太极拳">
+                    <div class="image-caption">太极拳</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2020_送王船.png" alt="送王船">
+                    <div class="image-caption">送王船</div>
+                </div>
+            </div>
+        </div>
+        <div class="year-content" id="content-2022">
+            <div class="image-container">
+                <div class="image-item">
+                    <img src="/images/2022.png" alt="2022">
+                    <div class="image-caption">2022</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2022_中国传统制茶技艺及其相关习俗.png" alt="中国传统制茶技艺及其相关习俗">
+                    <div class="image-caption">中国传统制茶技艺及其相关习俗</div>
+                </div>
+            </div>
+        </div>
+        <div class="year-content" id="content-2024">
+            <div class="image-container">
+                <div class="image-item">
+                    <img src="/images/2024.png" alt="2024">
+                    <div class="image-caption">2024</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2024_春节.png" alt="春节">
+                    <div class="image-caption">春节</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2024_羌年.png" alt="羌年">
+                    <div class="image-caption">羌年</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2024_中国木拱桥传统营造技艺.png" alt="中国木拱桥传统营造技艺">
+                    <div class="image-caption">中国木拱桥传统营造技艺</div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/2024_黎族传统纺染织绣技艺.png" alt="黎族传统纺染织绣技艺">
+                    <div class="image-caption">黎族传统纺染织绣技艺</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const buttons = document.querySelectorAll('.year-button');
+    const contents = document.querySelectorAll('.year-content');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            buttons.forEach(btn => btn.classList.remove('active'));
+            contents.forEach(div => div.classList.remove('active'));
+
+            button.classList.add('active');
+            const year = button.getAttribute('data-year');
+            const contentDiv = document.getElementById('content-' + year);
+            if (contentDiv) {
+                contentDiv.classList.add('active');
+            }
+        });
+    });
+
+    buttons[0].click(); // 默认激活第一个年份
+</script>
+</body>
+
+</html>

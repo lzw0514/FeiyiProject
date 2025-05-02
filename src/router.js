@@ -14,6 +14,7 @@ import AIPage from './views/ai-explore.vue'
 import Knowledge from './views/knowledge.vue'
 import MyProfile from './views/myhome.vue'
 import Rank from './views/rank.vue'
+import HeritageList from './components/heritage-list.vue'
 Vue.use(Router)
 // Vue.use(Meta)
 
@@ -75,11 +76,17 @@ const router = new Router({
       meta: { title: '排行榜 - 非遗网' }
     },
     {
+      path: '/heritageList',
+      name: 'HeritageList',
+      component: HeritageList,
+    },
+    {
       name: '404 - Not Found',
       path: '**',
       component: NotFound,
       meta: { title: '页面未找到 - 非遗网' }
-    }
+    },
+
   ]
 })
 
