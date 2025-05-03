@@ -1,40 +1,21 @@
 <template>
   <footer
-    class="footer4-footer7 thq-section-padding"
-    v-bind:class="rootClassName"
+      class="footer4-footer7 thq-section-padding"
+      v-bind:class="rootClassName"
   >
     <div class="footer4-max-width thq-section-max-width">
       <div class="footer4-content">
         <div class="footer4-logo">
-          <svg width="48" height="48" viewBox="0 0 48 48">
-            <path
-              d="M19.455 26.444C17.636 28.222 15.817 30 12.182 30C8.545 30 4 27.333 4 22s4.545-8 8.182-8c5.454 0 8.182 3.556 11.818 8s6.364 8 11.818 8C39.455 30 44 27.333 44 22s-4.545-8-8.182-8c-3.636 0-6.363 2.667-7.272 3.556"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="4"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-          </svg>
-        </div>
-        <div class="footer4-links">
-          <a
-            href="https://example.com"
-            target="_blank"
-            rel="noreferrer noopener"
-            class="thq-body-small"
-          >
-   
-          </a>
+          <!-- 你的logo SVG -->
         </div>
       </div>
       <div class="footer4-credits">
         <div class="thq-divider-horizontal"></div>
-        <div class="footer4-row">
-          <div class="footer4-container">
-            <span class="thq-body-small">非遗网</span>
-          </div>
-        
+        <div class="footer4-links-container">
+          <span class="footer4-text">非遗网</span>
+          <RouterLink to="/about" class="footer4-link">关于我们</RouterLink>
+          <RouterLink to="/contact" class="footer4-link">联系我们</RouterLink>
+          <RouterLink to="/privacy" class="footer4-link">隐私与政策</RouterLink>
         </div>
       </div>
     </div>
@@ -53,7 +34,8 @@ export default {
 <style scoped>
 .footer4-footer7 {
   width: 100%;
-  height: 387px;
+  height: auto;
+  padding: 20px 0;
   display: flex;
   overflow: hidden;
   position: relative;
@@ -62,139 +44,59 @@ export default {
   flex-direction: column;
   justify-content: center;
 }
- 
+
 .footer4-max-width {
-  gap: var(--dl-layout-space-threeunits);
+  width: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
- 
+
 .footer4-content {
-  gap: var(--dl-layout-space-twounits);
+  width: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
- 
-.footer4-logo {
-  gap: 24px;
-  display: flex;
-  overflow: hidden;
-  align-items: flex-start;
-  flex-direction: column;
-}
- 
-.footer4-links {
-  gap: var(--dl-layout-space-twounits);
-  display: flex;
-  align-items: flex-start;
-}
- 
+
 .footer4-credits {
-  gap: var(--dl-layout-space-twounits);
+  width: 100%;
   display: flex;
-  align-self: stretch;
   align-items: center;
   flex-direction: column;
 }
- 
-.footer4-row {
+
+.footer4-links-container {
   display: flex;
-  align-self: stretch;
-  align-items: flex-start;
-  flex-shrink: 0;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  gap: 24px; /* 调整这个值来控制间距 */
+  flex-wrap: wrap;
+  padding: 10px 0;
 }
- 
-.footer4-container {
-  display: flex;
-  align-items: flex-start;
-}
- 
-.footer4-footer-links {
-  gap: 24px;
-  display: flex;
-  align-items: flex-start;
-}
- 
-.footer4-text11 {
-  fill: var(--dl-color-theme-neutral-dark);
+
+.footer4-text, .footer4-link {
   color: var(--dl-color-theme-neutral-dark);
+  text-decoration: none;
+  font-size: 14px;
+  white-space: nowrap;
 }
- 
-.footer4-fragment1 {
-  display: contents;
+
+.footer4-link:hover {
+  text-decoration: underline;
 }
- 
-.footer4-text14 {
-  display: inline-block;
+
+.thq-divider-horizontal {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 10px 0;
 }
- 
-.footer4-fragment2 {
-  display: contents;
-}
- 
-.footer4-text15 {
-  display: inline-block;
-}
- 
-.footer4-fragment3 {
-  display: contents;
-}
- 
-.footer4-text16 {
-  display: inline-block;
-}
- 
-.footer4-fragment4 {
-  display: contents;
-}
- 
-.footer4-text17 {
-  display: inline-block;
-}
- 
-.footer4-fragment5 {
-  display: contents;
-}
- 
-.footer4-text18 {
-  display: inline-block;
-}
- 
-.footer4-fragment6 {
-  display: contents;
-}
- 
-.footer4-text19 {
-  display: inline-block;
-}
- 
-.footer4root-class-name {
-  flex: 1;
-}
- 
-@media(max-width: 767px) {
-  .footer4-row {
-    gap: var(--dl-layout-space-oneandhalfunits);
-    align-items: center;
+
+@media (max-width: 767px) {
+  .footer4-links-container {
+    gap: 16px;
     flex-direction: column;
-    justify-content: center;
-  }
-}
- 
-@media(max-width: 479px) {
-  .footer4-max-width {
-    gap: var(--dl-layout-space-oneandhalfunits);
-  }
-  .footer4-links {
-    flex-direction: column;
-  }
-  .footer4-footer-links {
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
   }
 }
 </style>

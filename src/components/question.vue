@@ -114,6 +114,12 @@ export default {
       return val
     },
     async loadQuestions () {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        alert('请先登录');
+        this.$router.push('/Page1');
+        return;
+      }
       try {
         const res = await axios.get('/questions/random')
         if (res.data.code === 1) {
@@ -160,6 +166,12 @@ export default {
       }
     },
     goToLeaderboard () {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        alert('请先登录');
+        this.$router.push('/Page1');
+        return;
+      }
       this.$router.push({ name: 'Ranking' }) 
     }
   }

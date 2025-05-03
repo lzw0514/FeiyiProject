@@ -179,8 +179,8 @@ export default {
     left: 0px;
     right: 0px;
     width: 100%;
-    bottom: 0px;
-    height: 100%;
+    bottom: 10px;
+    height: 90%;
     position: absolute;
   }
   
@@ -277,13 +277,7 @@ export default {
     text-align: center;
   }
   
-  .sign-up-fragment1 {
-    display: contents;
-  }
-  
-  .sign-up-text6 {
-    display: inline-block;
-  }
+
   
   .sign-up-fragment2 {
     display: contents;

@@ -15,6 +15,9 @@ import Knowledge from './views/knowledge.vue'
 import MyProfile from './views/myhome.vue'
 import Rank from './views/rank.vue'
 import HeritageList from './components/heritage-list.vue'
+import About from './components/about.vue'
+import Contact from './components/contact.vue'
+import Privacy from './components/privacy.vue'
 Vue.use(Router)
 // Vue.use(Meta)
 
@@ -79,6 +82,21 @@ const router = new Router({
       path: '/heritageList',
       name: 'HeritageList',
       component: HeritageList,
+    },
+    {
+      path:'/about',
+      name:'about',
+      component:About,
+    },
+    {
+      path:'/contact',
+      name:'contact',
+      component:Contact,
+    },
+    {
+      path:'/privacy',
+      name:'privacy',
+      component:Privacy,
     },
     {
       name: '404 - Not Found',

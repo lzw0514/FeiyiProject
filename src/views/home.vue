@@ -182,37 +182,9 @@
         <ViewMoreButton :category="'民俗'" />
       </template>
     </app-features25>
+    <PianoTabs>
+    </PianoTabs>
     <app-footer4>
-      <template v-slot:link1>
-        <div class="home-fragment53">
-          <span class="home-text55">关于我们</span>
-        </div>
-      </template>
-      <template v-slot:link2>
-        <div class="home-fragment54">
-          <span class="home-text56">联系我们</span>
-        </div>
-      </template>
-      <template v-slot:link5>
-        <div class="home-fragment55">
-          <span class="home-text57">隐私与政策</span>
-        </div>
-      </template>
-      <template v-slot:termsLink>
-        <div class="home-fragment56">
-          <span class="home-text58">Terms and Conditions</span>
-        </div>
-      </template>
-      <template v-slot:cookiesLink>
-        <div class="home-fragment57">
-          <span class="home-text59">Cookies Policy</span>
-        </div>
-      </template>
-      <template v-slot:privacyLink>
-        <div class="home-fragment58">
-          <span class="home-text60">Privacy Policy</span>
-        </div>
-      </template>
     </app-footer4>
   </div>
 </template>
@@ -226,6 +198,7 @@ import AppFeatures25 from '../components/features25'
 import AppFooter4 from '../components/footer4'
 import ViewMoreButton from '../components/ViewMoreButton.vue';
 import HeritageList  from "../components/heritage-list.vue";
+import PianoTabs from '../components/skills.vue'
 
 export default {
   name: 'Home',
@@ -239,6 +212,7 @@ export default {
     AppFooter4,
     ViewMoreButton,
     HeritageList,
+    PianoTabs,
   },
   metaInfo: {
     title: 'Spry Adorable Lyrebird',

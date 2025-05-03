@@ -3,47 +3,10 @@
     <app-navbar8 >
       
     </app-navbar8>
-    <sign-in4>
-      <template v-slot:action1>
-        <div class="page1-fragment26"><span class="page1-text26">登录</span></div>
-      </template>
-      <template v-slot:heading1>
-        <div class="page1-fragment27">
-          <span class="page1-text27">欢迎登陆中国非遗网</span>
-        </div>
-      </template>
+    <sign-in4 style="margin-bottom: 60px;">
     </sign-in4>
     <app-footer4 rootClassName="footer4root-class-name">
-      <template v-slot:link1>
-        <div class="page1-fragment28">
-          <span class="page1-text28">关于我们</span>
-        </div>
-      </template>
-      <template v-slot:link2>
-        <div class="page1-fragment29">
-          <span class="page1-text29">联系我们</span>
-        </div>
-      </template>
-      <template v-slot:link5>
-        <div class="page1-fragment30">
-          <span class="page1-text30">隐私与政策</span>
-        </div>
-      </template>
-      <template v-slot:termsLink>
-        <div class="page1-fragment31">
-          <span class="page1-text31">Terms and Conditions</span>
-        </div>
-      </template>
-      <template v-slot:cookiesLink>
-        <div class="page1-fragment32">
-          <span class="page1-text32">Cookies Policy</span>
-        </div>
-      </template>
-      <template v-slot:privacyLink>
-        <div class="page1-fragment33">
-          <span class="page1-text33">Privacy Policy</span>
-        </div>
-      </template>
+
     </app-footer4>
   </div>
 </template>
@@ -52,11 +15,13 @@
 import AppNavbar8 from '../components/navbar8'
 import SignIn4 from '../components/sign-in4'
 import AppFooter4 from '../components/footer4'
+import SignUp from "@/components/sign-up.vue";
 
 export default {
   name: 'Page1',
   props: {},
   components: {
+    SignUp,
     AppNavbar8,
     SignIn4,
     AppFooter4,
