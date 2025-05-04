@@ -50,12 +50,12 @@
 ---
 
 ### 🏆 排行榜
-![排行榜](./assets/paihangbang.png)
+![排行榜](./assets/paihangb.png)
 
 ---
 
 ### 📚 非遗列表
-![非遗列表](./assets/comment.png)
+![非遗列表](./assets/feiyi.png)
 
 ---
 
