@@ -21,22 +21,72 @@
 ## 🎨 页面展示
 
 ### 🏠 首页
-![首页](./assets/home.png)
+![首页](./assets/shouye1.png)
 
 ---
+![](./assets/shouye3.png)
 
-### 🤖 AI 问答
-![AI问答](./assets/qa.png)
+---
+![](./assets/shouye2.png)
+
+---
+![](./assets/shouye4.png)
+
+---
+![](./assets/zhizuo.png)
+
+---
+### 🏠 登录
+![登录](./assets/denglu.png)
+
+---
+### 🏠 注册
+![注册](./assets/zhuce.png)
+
+---
+### 💬 非遗问答
+![非遗问答](./assets/wenda.png)
 
 ---
 
 ### 🏆 排行榜
-![排行榜](./assets/rank.png)
+![排行榜](./assets/paihangbang.png)
 
 ---
 
-### 💬 评论互动
-![评论互动](./assets/comment.png)
+### 📚 非遗列表
+![非遗列表](./assets/comment.png)
+
+---
+
+### 📚 非遗详情
+![非遗详情](./assets/xiangqingye.png)
+
+---
+
+### 🤖 AI 问答
+![AI问答](./assets/AI.png)
+
+---
+
+### 📍 非遗地图可视化
+![非遗地图可视化](./assets/keshihua.png)
+
+---
+
+### 🙋‍♀️个人主页
+![个人主页](./assets/gerenziliao.png)
+
+---
+
+### 🙋‍♀️个人评论
+![个人评论](./assets/pinglun.png)
+
+---
+
+### 🙋‍♀️个人收藏
+![个人收藏](./assets/shoucang.png)
+
 
 
 ##🏗️ 项目结构
