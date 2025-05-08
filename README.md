@@ -141,7 +141,7 @@ feiyi-vue/
    ```bash
    npm run serve
 
-  访问 http://localhost:8081 查看项目。
+  访问 http://localhost:8080 查看项目。
 
 ##  📫 常用接口说明
 
